@@ -58,3 +58,16 @@
   font-size: 18px;  /* tamaño de la flecha */
 }
 
+/* Estilos para las imágenes del slider */
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene proporción y cubre todo el contenedor */
+  object-position: center;
+}
+
+/* Asegura que los slides de Swiper mantengan la altura correcta */
+.swiper-slide {
+  height: 100%;
+}
+

@@ -39,8 +39,8 @@ export default function Home(){
                 )}
             </div>    
             <div className="index-container">
-                <h1 className="welcome-text center">Bienvenido a Tienda de Guitarras</h1>
-                <p className="ppal-text subtitle-text center">Encuentra las mejores guitarras al mejor precio</p>
+                <h1 className="welcome-text center">Welcome to Guitar Store</h1>
+                <p className="ppal-text subtitle-text center">Find the best guitars at the best price</p>
             </div>
         </section>
     )
