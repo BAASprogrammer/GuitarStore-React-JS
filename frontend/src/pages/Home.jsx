@@ -5,11 +5,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../assets/css/slider.css";
 import banners from "../data/banners.json";
+import Products from "./Products";
 
-export default function Home(){
-    // Usar rutas absolutas para las imágenes
+export default function Home({ dato, cart, addCart }){
+    // Importar dinámicamente las imágenes desde src/images/banners/
     const getImagePath = (imageName) => {
-        return `/images/banners/${imageName}`;
+        try {
+            return require(`../images/banners/${imageName}`).default || require(`../images/banners/${imageName}`);
+        } catch (e) {
+            console.warn(`Imagen no encontrada: ${imageName}`);
+            return "";
+        }
     };
 
     return(
@@ -36,6 +42,10 @@ export default function Home(){
             <div className="index-container">
                 <h1 className="welcome-text center">Bienvenido a Tienda de Guitarras</h1>
                 <p className="ppal-text subtitle-text center">Encuentra las mejores guitarras al mejor precio</p>
+            </div>
+
+            <div className="home-products-section">
+                <Products dato={dato} cart={cart} addCart={addCart} />
             </div>
         </section>
     )

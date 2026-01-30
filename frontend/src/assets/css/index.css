@@ -365,3 +365,15 @@ button:disabled:hover{
 	font-weight: var(--weight-medium);
 	opacity: 0.5;
 }
+
+/* Home Products Section */
+.home-products-section {
+	padding: 4rem 0;
+	background: #f8f9fa;
+}
+
+.home-products-section h1 {
+	text-align: center;
+	margin-bottom: 2rem;
+	color: #333;
+}

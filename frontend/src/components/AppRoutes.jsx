@@ -7,8 +7,16 @@ import Products from "../pages/Products"
 export default function Approutes({dato, addCart, cart}){
     return(
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home
+                dato={dato}
+                cart={cart}
+                addCart={addCart}
+            />} />
+            <Route path="/home" element={<Home
+                dato={dato}
+                cart={cart}
+                addCart={addCart}
+            />} />
             <Route path="/products" element={<Products
                 dato = {dato}
                 cart = {cart}
