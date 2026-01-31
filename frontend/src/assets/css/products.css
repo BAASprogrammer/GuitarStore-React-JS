@@ -40,24 +40,7 @@
 	height: 300px;
 }
 
-.add-cart-button {
-	width: 100%;
-	max-width: 400px;
-	padding: 0.5rem;
-	margin: 1rem 0;
-	background-color: var(--primary-color);
-	color: var(--white);
-	font-size: 13pt;
-	border: 1px solid var(--add-cart-border);
-	border-radius: 1rem;
-	font-weight: var(--weight-semi-bold);
-	font-family: var(--font-arimo);
-}
-
-.add-cart-button:hover {
-	background-color: var(--add-cart-hover);
-	border: 1px solid var(--add-cart-border-hover);
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
 .product-value {
 	font-size: 25pt;
@@ -73,78 +56,21 @@
 	min-height: 2rem;
 }
 
-.empty-cart-button {
-	background-color: var(--empty-cart-hover);
-	color: var(--white);
-	font-size: 12pt;
-	border: 1px solid var(--empty-cart-border);
-	border-radius: 1rem;
-	margin: auto;
-	width: 40%;
-	margin: 1rem;
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
-.empty-cart-button:hover {
-	background-color: var(--accent-gold);
-	border: 1px solid var(--accent-gold-border);
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
-.add-del-cart {
-	color: var(--white);
-	background-color: var(--add-cart-bg);
-	border: 1px solid var(--add-cart-border);
-	border-radius: 5px;
-	margin: 0.5rem;
-	width: 1.5rem;
-	font-weight: var(--weight-extra-bold);
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
-.add-del-cart:hover {
-	background-color: var(--accent-gold);
-	border: 1px solid var(--accent-gold-border);
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
-.pay-cart-button{
-	background-color: var(--pay-cart-bg);
-	border: 1px solid var(--pay-cart-border);
-	color: var(--white);
-	font-size: 12pt;
-	border-radius: 1rem;
-	margin: auto;
-	width: 40%;
-	margin: 1rem;
-	cursor: not-allowed;
-}
-
-.pay-message {
-	background: var(--danger);
-	width: 11rem;
-	border: 1px solid var(--danger);
-	border-radius: .5rem;
-	opacity: .8;
-	position: absolute;
-	left: 54.5%;
-	bottom: 70px;
-	height: 1.5rem;
-	font-weight: 600;
-}
-
-.quantity-cart{
-	width: 30px;
-	border-radius: 5px;
-	border: 1px solid gainsboro;
-	text-align: center;
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
 .guitar-title {
 	font-size: 16pt;
 }
 
-button:disabled:hover{
-	background-color: var(--add-cart-bg);
-	border: 1px solid var(--add-cart-border);
-	cursor: not-allowed;
-}
+/* Cart styles moved to src/assets/css/shoppingcart.css */
 
 .product-data-container{
 	max-height: 18vh;
