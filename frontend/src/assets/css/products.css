@@ -45,7 +45,7 @@
 	max-width: 400px;
 	padding: 0.5rem;
 	margin: 1rem 0;
-	background-color: var(--add-cart-bg);
+	background-color: var(--primary-color);
 	color: var(--white);
 	font-size: 13pt;
 	border: 1px solid var(--add-cart-border);
@@ -85,8 +85,8 @@
 }
 
 .empty-cart-button:hover {
-	background-color: #c48104;
-	border: 1px solid #cc952d;
+	background-color: var(--accent-gold);
+	border: 1px solid var(--accent-gold-border);
 }
 
 .add-del-cart {
@@ -100,8 +100,8 @@
 }
 
 .add-del-cart:hover {
-	background-color: #c48104;
-	border: 1px solid #cc952d;
+	background-color: var(--accent-gold);
+	border: 1px solid var(--accent-gold-border);
 }
 
 .pay-cart-button{
@@ -117,9 +117,9 @@
 }
 
 .pay-message {
-	background: #bd0101;
+	background: var(--danger);
 	width: 11rem;
-	border: 1px solid red;
+	border: 1px solid var(--danger);
 	border-radius: .5rem;
 	opacity: .8;
 	position: absolute;

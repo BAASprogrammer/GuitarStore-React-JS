@@ -7,12 +7,12 @@
 }
 
 .social-icons a {
-  color: #333;
+  color: var(--text-dark);
   font-size: 2rem;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #ff6600;
+  color: var(--primary-strong);
   transform: scale(1.2);
 }

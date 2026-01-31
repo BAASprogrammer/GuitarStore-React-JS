@@ -1,5 +1,5 @@
 :root{
-    --primary-color: #ff7e00;
+    /* primary color moved to variables.css */
 }
 
 /* Home: why choose us */
@@ -66,11 +66,11 @@
 /* Home Products Section (moved from index.css) */
 .home-products-section {
 	padding: 4rem 0;
-	background: #f8f9fa;
+	background: var(--bg-light);
 }
 
 .home-products-section h1 {
 	text-align: center;
 	margin-bottom: 2rem;
-	color: #333;
+	color: var(--text-dark);
 }

@@ -16,66 +16,81 @@
   --z-10: 10;
 
   /* App colors */
-  --black: #000000;
-  --white: #ffffff;
+  --black: rgba(0,0,0,1);
+  --white: rgba(255,255,255,1);
   --text-95: rgba(245, 245, 245, 0.918);
 
   /* Accent / Brand */
-  --accent-orange: #fc5f16; /* rgb(252,95,22) */
+  --accent-orange: rgba(252,95,22,1); /* rgb(252,95,22) */
   --accent-orange-opaque: rgba(252, 95, 22, 0.863);
 
+  /* Project-wide colors */
+  --primary-color: rgba(255,126,0,1);
+  --primary-strong: rgba(255,102,0,1);
+  --text-dark: rgba(51,51,51,1);
+  --bg-light: rgba(248,249,250,1);
+  --bg-offwhite: rgba(249,249,249,1);
+  --panel-bg: rgba(255,255,255,0.952);
+  --muted-white: rgba(255,255,255,0.302);
+  --overlay-white-02: rgba(255,255,255,0.02);
+  --border-light: rgba(204,204,204,1);
+  --border-dark-30: rgba(8,7,7,0.302);
+  --accent-gold: rgba(196,129,4,1);
+  --accent-gold-border: rgba(204,149,45,1);
+  --danger: rgba(189,1,1,1);
+
   /* Add-to-cart */
-  --add-cart-bg: rgb(202,133,3);
-  --add-cart-border: rgb(233,155,10);
-  --add-cart-hover: rgb(209,139,8);
-  --add-cart-border-hover: #9c6805; /* rgb(156,104,5) */
+  --add-cart-bg: rgba(202,133,3,1);
+  --add-cart-border: rgba(233,155,10,1);
+  --add-cart-hover: rgba(222,149,20,1); /* hover: lighter for better visibility */
+  --add-cart-border-hover: rgba(156,104,5,1); /* rgb(156,104,5) */
 
   /* Logo gradient (defaults) */
-  --logo-grad-start: #ff8c42;
-  --logo-grad-end: #ffb347;
+  --logo-grad-start: rgba(255,140,66,1);
+  --logo-grad-end: rgba(255,179,71,1);
 
   /* Backgrounds & inputs */
-  --bg-modal-dark: #505050;
-  --bg-contact-dark: #333333;
-  --bg-input-dark: #555555;
-  --border-input-dark: #777777;
+  --bg-modal-dark: rgba(80,80,80,1);
+  --bg-contact-dark: rgba(51,51,51,1);
+  --bg-input-dark: rgba(85,85,85,1);
+  --border-input-dark: rgba(119,119,119,1);
 
   --shadow-white-10: 0 0 10px rgba(255,255,255,0.1);
 
   /* Light-theme variations */
-  --empty-cart-hover: #ee9d05;
-  --empty-cart-border: #e2a32e;
-  --pay-cart-bg: rgb(216,46,16);
-  --pay-cart-border: rgb(192,41,15);
+  --empty-cart-hover: rgba(238,157,5,1);
+  --empty-cart-border: rgba(226,163,46,1);
+  --pay-cart-bg: rgba(216,46,16,1);
+  --pay-cart-border: rgba(192,41,15,1);
 
   /* Small UI */
-  --data-error-color: aliceblue;
+  --data-error-color: rgba(240,248,255,1);
 
   /* App-specific */
-  --app-bg: #282c34;
-  --app-link: #61dafb;
+  --app-bg: rgba(40,44,52,1);
+  --app-link: rgba(97,218,251,1);
 
   /* Dots / decorative gradients */
-  --dot-gradient-start: #ffb347;
-  --dot-gradient-end: #ff7e00;
+  --dot-gradient-start: rgba(255,179,71,1);
+  --dot-gradient-end: rgba(255,126,0,1);
 
   /* Icon shadow */
-  --sun-shadow-color: #ffe607;
+  --sun-shadow-color: rgba(255,230,7,1);
 }
 
 /* Theme tweaks */
 .light-theme {
-  --logo-grad-start: #ff6b35;
-  --logo-grad-end: #f7931e;
-  --dot-gradient-start: #ffd69a;
-  --dot-gradient-end: #ff8a1a;
+  --logo-grad-start: rgba(255,107,53,1);
+  --logo-grad-end: rgba(247,147,30,1);
+  --dot-gradient-start: rgba(255,214,154,1);
+  --dot-gradient-end: rgba(255,138,26,1);
 }
 
 .dark-theme {
-  --logo-grad-start: #ff8c42;
-  --logo-grad-end: #ffb347;
-  --dot-gradient-start: #ffb347;
-  --dot-gradient-end: #ff7e00;
+  --logo-grad-start: rgba(255,140,66,1);
+  --logo-grad-end: rgba(255,179,71,1);
+  --dot-gradient-start: rgba(255,179,71,1);
+  --dot-gradient-end: rgba(255,126,0,1);
 }
 
 /* Utility classes using variables */
