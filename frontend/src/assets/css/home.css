@@ -92,20 +92,22 @@
 	color: var(--text-dark);
 }
 
-.view-products{
+.view-products, .why-us{
   margin-top: 1rem;
   background-color: var(--primary-strong);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: var(--white);
   border: none;
   padding: 0.75rem 1.5rem;
+  margin-right: 1rem;
   border-radius: 1rem;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
+  width: 13rem;
 }
 
-.view-products:hover{
+.view-products:hover, .why-us:hover{
   background-color: var(--primary-color);
 }
 
@@ -131,7 +133,7 @@
 }
 
 .why-choose-us-title-end {
-  /* El color se define por dot individual para armonía visual */
+  color: var(--primary-color);
 }
 
 .why-choose-us-grid {

@@ -72,3 +72,14 @@
 .product-description{
 	height: 6rem;
 }
+
+.category{
+	position: absolute;
+	background-color: var(--primary-color);
+	color: var(--white);
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.5rem;
+	font-size: 0.8rem;
+	margin: 0.5rem;
+	font-weight: var(--weight-semi-bold);
+}

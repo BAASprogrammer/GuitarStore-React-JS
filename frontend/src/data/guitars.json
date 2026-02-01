@@ -5,7 +5,7 @@
       "descripcion": "Guitarra eléctrica clásica con sonido brillante y versátil, ideal para rock, blues y pop.",
       "imagen": "guitar1.jpg",
       "precio": 899000,
-      "categoria": "Eléctrica"
+      "categoria": "Clásica"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "descripcion": "Guitarra eléctrica rápida y cómoda, diseñada para estilos modernos y metal.",
       "imagen": "guitar3.jpg",
       "precio": 749000,
-      "categoria": "Eléctrica"
+      "categoria": "Acústica"
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "descripcion": "Excelente relación precio-calidad, ideal para principiantes y músicos intermedios.",
       "imagen": "guitar3.jpg",
       "precio": 399000,
-      "categoria": "Eléctrica"
+      "categoria": "Acústica"
     },
     {
       "id": 5,
@@ -37,7 +37,7 @@
       "descripcion": "Diseño elegante con gran equilibrio tonal y excelente comodidad.",
       "imagen": "guitar5.jpg",
       "precio": 999000,
-      "categoria": "Eléctrica"
+      "categoria": "Clásica"
     },
     {
       "id": 6,
@@ -45,7 +45,7 @@
       "descripcion": "Guitarra agresiva con mástil rápido, perfecta para metal y hard rock.",
       "imagen": "guitar6.jpg",
       "precio": 459000,
-      "categoria": "Eléctrica"
+      "categoria": "Acústica"
     },
     {
       "id": 7,
@@ -53,7 +53,7 @@
       "descripcion": "Clásico sonido Les Paul a un precio accesible, ideal para múltiples estilos.",
       "imagen": "guitar7.jpg",
       "precio": 699000,
-      "categoria": "Eléctrica"
+      "categoria": "Clásica"
     },
     {
       "id": 8,
@@ -61,7 +61,7 @@
       "descripcion": "Estilo vintage con sonido auténtico y excelente terminación.",
       "imagen": "guitar1.jpg",
       "precio": 529000,
-      "categoria": "Eléctrica"
+      "categoria": "Clásica"
     }
   ]
   

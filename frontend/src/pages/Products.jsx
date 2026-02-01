@@ -16,7 +16,7 @@ export default function Products({dato, addCart, cart}){
                 {productsData.map((item, index) => (
                     <div className="grid-item" key={index}>   
                         <div className="product-container">
-                            <div className="product-img"><img src={require(`../assets/images/products/${item.imagen}`)} alt="Guitarra"></img></div>
+                            <div className="product-img"><span className="category">{item.categoria}</span><img src={require(`../assets/images/products/${item.imagen}`)} alt="Guitarra"></img></div>
                             <div className="product-data"><p className="product-name font-weight-800">{item.nombre}</p>
                                 <p className="product-description">{item.descripcion}</p>
                                 <p className="product-value">${item.precio}</p>

@@ -29,14 +29,25 @@ export default function Home({ dato, cart, addCart }){
           <div className="welcome-animation">
             <span className="welcome-line"></span><span className="welcome-guitar">🎸</span>
           </div>
-          <div>
+          <div className="flex button-home-container">
             <button className="view-products" title="Explorar Nuestro Catálogo" 
-            onClick={() => {
-                const productsSection = document.getElementById('products');
-                if (productsSection) {
-                    productsSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }}>Explorar Productos</button>
+                onClick={() => {
+                    const productsSection = document.getElementById('products');
+                    if (productsSection) {
+                        productsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }}>
+                Explorar Productos
+            </button>
+            <button className="why-us" title="¿Por qué elegirnos?"
+                onClick={() => {
+                    const whyChooseUsSection = document.querySelector('.why-choose-us');
+                    if (whyChooseUsSection) {
+                        whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }}>
+                Conoce más
+            </button>
           </div>
         </div>
         <div>
