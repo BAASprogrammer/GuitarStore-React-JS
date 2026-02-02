@@ -6,7 +6,9 @@ import HomeGuitar from "../assets/images/home/acoustic-guitar.jpg";
 import "../assets/css/home.css";
 
 export default function Home({ dato, cart, addCart }){
+
   const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
     setIsDark(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => setIsDark(e.matches));

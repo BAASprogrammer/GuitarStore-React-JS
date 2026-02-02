@@ -1,9 +1,9 @@
 [
     {
       "id": 1,
-      "nombre": "Fender Stratocaster Standard",
-      "descripcion": "Guitarra clásica con sonido brillante y versátil, ideal para rock, blues y pop.",
-      "imagen": "guitar1.jpg",
+      "nombre": "Aurora Nylon",
+      "descripcion": "Guitarra clásica de cuerdas de nylon, diseñada para ofrecer un sonido cálido, suave y balanceado.",
+      "imagen": "guitar1.png",
       "precio": 899000,
       "categoria": "Clásica"
     },
@@ -11,23 +11,23 @@
       "id": 2,
       "nombre": "Gibson Les Paul Studio",
       "descripcion": "Sonido potente y cálido con gran sustain, perfecta para rock y hard rock.",
-      "imagen": "guitar2.jpg",
+      "imagen": "electric-guitar1.png",
       "precio": 1299000,
-      "categoria": "Clásica"
+      "categoria": "Eléctrica"
     },
     {
       "id": 3,
       "nombre": "Ibanez RG Series",
-      "descripcion": "Guitarra acústica rápida y cómoda, diseñada para estilos modernos y metal.",
-      "imagen": "guitar3.jpg",
+      "descripcion": "Bajo diseñado para estilos modernos y metal.",
+      "imagen": "bass2.png",
       "precio": 749000,
-      "categoria": "Acústica"
+      "categoria": "Bajo"
     },
     {
       "id": 4,
       "nombre": "Yamaha Pacifica 112V",
       "descripcion": "Excelente relación precio-calidad, ideal para principiantes y músicos intermedios.",
-      "imagen": "guitar3.jpg",
+      "imagen": "electroacustic1.png",
       "precio": 399000,
       "categoria": "Acústica"
     },
@@ -35,33 +35,33 @@
       "id": 5,
       "nombre": "PRS SE Custom 24",
       "descripcion": "Diseño elegante con gran equilibrio tonal y excelente comodidad.",
-      "imagen": "guitar5.jpg",
+      "imagen": "electric-guitar3.png",
       "precio": 999000,
-      "categoria": "Clásica"
+      "categoria": "Eléctrica"
     },
     {
       "id": 6,
       "nombre": "Jackson Dinky JS32",
-      "descripcion": "Guitarra agresiva con mástil rápido, perfecta para metal y hard rock.",
-      "imagen": "guitar6.jpg",
+      "descripcion": "Bajo agresivo con mástil rápido, perfecto para metal y hard rock.",
+      "imagen": "bass3.png",
       "precio": 459000,
-      "categoria": "Acústica"
+      "categoria": "Bajo"
     },
     {
       "id": 7,
       "nombre": "Epiphone Les Paul Standard",
       "descripcion": "Clásico sonido Les Paul a un precio accesible, ideal para múltiples estilos.",
-      "imagen": "guitar7.jpg",
+      "imagen": "guitar2.png",
       "precio": 699000,
-      "categoria": "Clásica"
+      "categoria": "Acústica"
     },
     {
       "id": 8,
       "nombre": "Squier Classic Vibe Stratocaster",
-      "descripcion": "Estilo vintage con sonido auténtico y excelente terminación.",
-      "imagen": "guitar1.jpg",
+      "descripcion": "Bajo sonido auténtico y excelente terminación.",
+      "imagen": "bass1.png",
       "precio": 529000,
-      "categoria": "Clásica"
+      "categoria": "Bajo"
     }
   ]
   

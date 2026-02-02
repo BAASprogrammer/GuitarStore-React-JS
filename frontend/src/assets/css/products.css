@@ -83,3 +83,33 @@
 	margin: 0.5rem;
 	font-weight: var(--weight-semi-bold);
 }
+
+/* Categories Container  */
+.categorys-container {
+  margin-bottom: 4rem;
+}
+
+.category-button {
+  width: 7rem;
+  height: 2rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 1rem;
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-weight: var(--weight-semi-bold);
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+.category-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.category-button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+/* End Categories Container */

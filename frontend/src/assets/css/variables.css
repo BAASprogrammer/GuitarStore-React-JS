@@ -21,6 +21,7 @@
   --fw-800: var(--weight-extra-bold);
 
   /* Spacing */
+  --gap-1: 0.5rem;
   --gap-2: 1rem;
   --py-4: 2rem;
 
@@ -125,6 +126,7 @@
 .justify-center { justify-content: center; }
 
 /* GAPS */
+.gap-1 { gap: var(--gap-1); }
 .gap-2 { gap: var(--gap-2); }
 
 /* PADDING */
