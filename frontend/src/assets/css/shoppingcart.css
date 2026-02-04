@@ -8,13 +8,14 @@
 	width: 500px;
 	position: absolute;
 	right: 3rem;
-	background-color: var(--panel-bg);
+	background-color: var(--bg-light);
 	display: none;
 	border-radius: 0.5rem;
 	padding: 1rem;
 	box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	color: var(--text-dark);
 }
 
 .container-shoppingcart:hover .modal-shoppingcart {

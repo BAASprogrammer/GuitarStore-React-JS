@@ -147,6 +147,16 @@
     color: var(--white);
 }
 
+/* Button toggle menu */
+.dark-theme .menu-opened{
+    background-color: rgba(30, 30, 35, 0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin-right: 1rem;
+}
+.dark-theme .menu-opened .menu-link{
+    color: var(--white);
+}
+
 /* ===== LIGHT THEME ===== */
 .light-theme {
     background-color: var(--white);

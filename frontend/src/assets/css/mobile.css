@@ -123,14 +123,18 @@
     }
     .menu-opened{
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
         width: 30%;
-        background-color: var(--bg-light);
+        background: var(--white);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         flex-direction: column;
-        border-radius: 1.5rem;
-        opacity: 0.95;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+    .menu-opened .menu-link{
+        padding: 0.1rem;
+        border-bottom: 1px solid var(--border-light);
     }
     /* Categories Buttons Container */
     .categories-buttons-container .category-button{
@@ -147,6 +151,14 @@
     .darkmode-shop {
         transform: translateX(0px);
         margin-top: 0.7rem;
+    }
+    /* About Container */
+    .about-container, .about-section{
+        padding: 0;
+    }
+    /* Main Container */
+    .main-container{
+        padding: 0 1.5rem;
     }
 }
 
