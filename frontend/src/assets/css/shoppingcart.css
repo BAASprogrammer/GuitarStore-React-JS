@@ -1,13 +1,7 @@
-/* Shoppingcart & modals moved from index.css */
-.container-shoppingcart {
-	float: right;
-	width: 3rem;
-}
-
 .modal-shoppingcart {
 	width: 500px;
 	position: absolute;
-	right: 3rem;
+	right: 0;
 	background-color: var(--bg-light);
 	display: none;
 	border-radius: 0.5rem;
@@ -128,8 +122,8 @@
 }
 
 .add-del-cart:hover {
-	background-color: var(--accent-gold);
-	border: 1px solid var(--accent-gold-border);
+	background-color: var(--primary-strong);
+	border: 1px solid var(--primary-strong);
 }
 
 .pay-cart-button{

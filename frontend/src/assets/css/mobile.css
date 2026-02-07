@@ -47,9 +47,13 @@
     }
 	
 	/* Shopping Cart */
-	.modal-shoppingcart {
-		right: 7vw;
-	}
+    .cart-badge {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        bottom: 1.2rem;
+        left: 4rem;
+        top: auto;
+    }
 	
 	/* Text */
     .ppal-text{
@@ -144,7 +148,7 @@
     }
     /* Dark-light mode shop */
     .darkmode-shop {
-        transform: translateX(0px);
+        transform: translateX(-10px);
         margin-top: 0.7rem;
     }
     /* About Container */

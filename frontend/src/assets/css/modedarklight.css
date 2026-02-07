@@ -67,10 +67,15 @@
     color: var(--white);
     border: 1px solid var(--add-cart-border);
 }
-
 .dark-theme .add-cart-button:hover {
     background-color: var(--add-cart-hover);
     border: 1px solid var(--add-cart-border-hover);
+}
+.dark-theme .modal-row.footer {
+    border-top: 1.5px solid rgba(165, 175, 184, 0.8);
+}
+.dark-theme .modal-row.header {
+    border-bottom: 1.5px solid rgba(165, 175, 184, 0.8);
 }
 
 /* Products */
