@@ -4,11 +4,11 @@
 	right: 0;
 	background-color: var(--bg-light);
 	display: none;
-	border-radius: 0.5rem;
-	padding: 1rem;
-	box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	border-radius: var(--br-md);
+	padding: var(--gap-2);
+	box-shadow: var(--shadow-dark-input);
+	-webkit-box-shadow: var(--shadow-dark-input);
+	-moz-box-shadow: var(--shadow-dark-input);
 	color: var(--text-dark);
 }
 
@@ -32,16 +32,16 @@
 
 .cart-badge {
     position: absolute;
-    top: 0px;
     background: var(--accent-orange-opaque);
     color: var(--white);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: bold;
     border-radius: 1rem;
     padding: 2px 6px;
     min-width: 7px;
     text-align: center;
-    z-index: 2;
+    z-index: var(--z-10);
+	bottom: 1.2rem;
 }
 
 .modal-row {
@@ -79,13 +79,13 @@
 .add-cart-button {
 	width: 100%;
 	max-width: 400px;
-	padding: 0.5rem;
-	margin: 1rem 0;
-	background-color: var(--primary-color);
+	padding: var(--gap-1);
+	margin: var(--gap-2) 0;
+	background-color: var(--primary-strong);
 	color: var(--white);
 	font-size: 13pt;
 	border: 1px solid var(--add-cart-border);
-	border-radius: 1rem;
+	border-radius: var(--br-lg);
 	font-weight: var(--weight-semi-bold);
 	font-family: var(--font-arimo);
 }
@@ -96,7 +96,7 @@
 }
 
 .empty-cart-button {
-	background-color: var(--empty-cart-hover);
+	background-color: var(--empty-cart-bg);
 	color: var(--white);
 	font-size: 12pt;
 	border: 1px solid var(--empty-cart-border);
@@ -107,8 +107,8 @@
 }
 
 .empty-cart-button:hover {
-	background-color: var(--accent-gold);
-	border: 1px solid var(--accent-gold-border);
+	background-color: var(--empty-cart-hover);
+	border: 1px solid var(--empty-cart-border);
 }
 
 .add-del-cart {
@@ -173,7 +173,7 @@ button:disabled:hover{
 	padding: 0.5rem;
 }
 
-.grid-item-modal label{
+.grid-item-modal,.grid-item-modal label{
 	font-size: clamp(0.8rem, 2vw, 1rem);
 }
 

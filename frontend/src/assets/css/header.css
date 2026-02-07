@@ -1,6 +1,6 @@
 /* Header styles moved from index.css */
 .header-container {
-	background-color: rgb(255, 255, 255);
+	background-color: var(--white);
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -13,7 +13,7 @@
 }
 
 .header-logo {
-	color: rgb(14, 14, 14);
+	color: var(--black);
 	width: fit-content;
 	display: inherit;
 }

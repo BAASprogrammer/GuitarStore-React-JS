@@ -61,6 +61,22 @@
 	font-size: 0.8rem;
 	margin: 0.5rem;
 	font-weight: var(--weight-semi-bold);
+	width: 3rem;
+}
+.category:hover {
+	animation: alternate 0.5s ease-in-out category-hover;
+}
+/* Category Animation */
+@keyframes category-hover {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 /* Categories Container  */

@@ -29,67 +29,85 @@
   --z-1: 1;
   --z-10: 10;
 
-  /* App colors */
+  /* ===== COLORS ===== */
+  
+  /* Neutral Colors */
   --black: rgba(0,0,0,1);
-  --text-95: rgba(245, 245, 245, 0.918);
   --white: rgba(255,255,255,1);
-
-  /* Accent / Brand */
-  --accent-gold: rgba(196,129,4,1);
-  --accent-gold-border: rgba(204,149,45,1);
-  --accent-orange: rgba(252,95,22,1); /* rgb(252,95,22) */
-  --accent-orange-opaque: rgba(252, 95, 22, 0.863);
-
-  /* Project-wide colors */
-  --bg-light: rgba(248,249,250,1);
-  --bg-offwhite: rgba(249,249,249,1);
-  --border-dark-30: rgba(8,7,7,0.302);
-  --border-light: rgba(204,204,204,1);
-  --danger: rgba(189,1,1,1);
-  --muted-white: rgba(255,255,255,0.302);
-  --overlay-white-02: rgba(255,255,255,0.02);
+  --text-95: rgba(245, 245, 245, 0.918);
+  --text-dark: rgba(51,51,51,1);
+  
+  /* Primary / Brand Colors */
   --primary-color: rgba(255,126,0,1);
   --primary-strong: rgba(255,102,0,1);
-  --text-dark: rgba(51,51,51,1);
-
-  /* Add-to-cart */
-  --add-cart-bg: var(--primary-color);
-  --add-cart-border: rgba(233,155,10,1);
-  --add-cart-border-hover: rgba(156,104,5,1); /* rgb(156,104,5) */
-  --add-cart-hover: rgba(222,149,20,1); /* hover: lighter for better visibility */
-
-  /* Logo gradient (defaults) */
-  --logo-grad-end: rgba(255,179,71,1);
+  --accent-orange: rgba(252,95,22,1);
+  --accent-orange-opaque: rgba(252, 95, 22, 0.863);
+  --accent-gold: rgba(196,129,4,1);
+  --accent-gold-border: rgba(204,149,45,1);
+  
+  /* Logo Gradient */
   --logo-grad-start: rgba(255,140,66,1);
-
-  /* Backgrounds & inputs */
+  --logo-grad-end: rgba(255,179,71,1);
+  
+  /* Background Colors */
+  --bg-light: rgba(248,249,250,1);
+  --bg-offwhite: rgba(249,249,249,1);
   --bg-contact-dark: rgba(51,51,51,1);
   --bg-input-dark: rgba(85,85,85,1);
   --bg-modal-dark: rgba(80,80,80,1);
+  --app-bg: rgba(40,44,52,1);
+  --overlay-white-02: rgba(255,255,255,0.02);
+  --muted-white: rgba(255,255,255,0.302);
+  --dark-overlay: rgba(30, 30, 35, 0.98);
+  
+  /* Border Colors */
+  --border-light: rgba(204,204,204,1);
+  --border-dark-30: rgba(8,7,7,0.302);
   --border-input-dark: rgba(119,119,119,1);
-
-  /* Light-theme variations */
-  --empty-cart-border: rgba(226,163,46,1);
-  --empty-cart-hover: rgba(238,157,5,1);
+  --border-dark-text: rgba(165, 175, 184, 0.8);
+  
+  /* Button / Cart Colors */
+  --add-cart-bg: var(--primary-strong);
+  --add-cart-border: rgba(233,155,10,1);
+  --add-cart-border-hover: rgba(156,104,5,1);
+  --add-cart-hover: var(--primary-color);
+  --empty-cart-bg: var(--primary-strong);
+  --empty-cart-border: var(--primary-strong);
+  --empty-cart-hover: var(--primary-color);
   --pay-cart-bg: rgba(216,46,16,1);
   --pay-cart-border: rgba(192,41,15,1);
-
-  /* Small UI */
+  
+  /* Status & Semantic Colors */
+  --danger: rgba(189,1,1,1);
   --data-error-color: rgba(240,248,255,1);
-
-  /* App-specific */
-  --app-bg: rgba(40,44,52,1);
-  --app-link: rgba(97,218,251,1);
-
-  /* Dots / decorative gradients */
-  --dot-gradient-end: var(--primary-color);
+  
+  /* Decorative / Animation Colors */
   --dot-gradient-start: var(--logo-grad-end);
-
-  /* Icon shadow */
+  --dot-gradient-end: var(--primary-color);
+  --star-light: rgba(255, 152, 0, 0.75);
+  --star-light-glow: rgba(255,152,0,0.25);
+  --star-dark: rgba(255, 253, 231, 0.7);
+  --star-dark-glow: rgba(255, 249, 196, 0.4);
+  --guitar-icon-light: rgba(255, 167, 38, 0.75);
+  --guitar-icon-dark: rgba(255, 213, 79, 0.7);
   --sun-shadow-color: rgba(255,230,7,1);
+  --app-link: rgba(97,218,251,1);
+  --dark-text-light: rgba(217, 232, 245, 0.8);
 
   /* Shadows */
   --shadow-white-10: 0 0 10px rgba(255,255,255,0.1);
+  --shadow-sm: 0 2px 8px rgba(53, 53, 53, 0.15);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-dark-input: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  --shadow-drop-sm: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-drop-md: 0 4px 12px rgba(0, 0, 0, 0.18);
+  --shadow-border-contact: 0 0 10px rgba(0, 0, 0, 0.1);
+  --shadow-dot-large: 0 8px 24px rgba(255, 126, 0, 0.18);
+
+  /* Border Radius - valores que se repiten */
+  --br-md: 0.5rem;
+  --br-lg: 1rem;
+  --br-xl: 1.5rem;
 }
 
 /* Theme tweaks */

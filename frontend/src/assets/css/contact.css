@@ -8,7 +8,7 @@
 	padding: 2rem;
 	background-color: var(--bg-offwhite);
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);		
+	box-shadow: var(--shadow-border-contact);		
 	margin: 5vh 0;
 	overflow: hidden;
 }
@@ -69,12 +69,12 @@
 .dot {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--dot-gradient-start, rgba(255,179,71,1)) 0%, var(--dot-gradient-end, rgba(255,126,0,1)) 100%);
+  background: linear-gradient(135deg, var(--dot-gradient-start) 0%, var(--dot-gradient-end) 100%);
   filter: blur(.3px);
   opacity: 0.95;
   transform: translate3d(0,0,0);
   will-change: transform, opacity;
-  box-shadow: 0 8px 24px rgba(255,126,0,0.18);
+  box-shadow: var(--shadow-dot-large);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

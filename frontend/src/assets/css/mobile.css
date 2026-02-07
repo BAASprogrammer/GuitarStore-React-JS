@@ -32,7 +32,7 @@
     }
 
     .grid-item img{
-        width: 100%;
+        width: clamp(55%, 60%, 70%);
         height: auto;  
     }
 
@@ -43,7 +43,7 @@
     }
 
     .guitar-home{
-        display:none
+        display:none;
     }
 	
 	/* Shopping Cart */
@@ -56,10 +56,7 @@
     }
     .empty-cart-button, .pay-cart-button{
         width: 70%;
-        font-size: 0.9rem;
     }
-
-	
 	/* Text */
     .ppal-text{
         font-size: 1rem;
@@ -131,7 +128,7 @@
         right: 0;
         width: 30%;
         background: var(--white);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--shadow-md);
         flex-direction: column;
         border-radius: 0.5rem;
         padding: 1rem;
