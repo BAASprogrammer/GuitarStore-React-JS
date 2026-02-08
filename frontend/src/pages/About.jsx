@@ -10,9 +10,6 @@ export default function About() {
                     En Tienda de Guitarras, somos apasionados por la música y nos dedicamos a ofrecer las mejores guitarras y accesorios para músicos de todos los niveles. Nuestra misión es proporcionar productos de alta calidad a precios competitivos, junto con un servicio al cliente excepcional.
                 </p>
                 <p className="ppal-text about-text">
-                    Fundada en 2020, Tienda de Guitarras ha crecido rápidamente gracias a nuestra dedicación a la satisfacción del cliente y a nuestra amplia selección de productos. Ya sea que seas un principiante buscando tu primera guitarra o un profesional en busca de equipo especializado, estamos aquí para ayudarte a encontrar lo que necesitas.
-                </p>
-                <p className="ppal-text about-text">
                     Nuestro equipo está compuesto por músicos experimentados que entienden las necesidades de nuestros clientes. Estamos comprometidos a brindar asesoramiento experto y apoyo en cada paso del camino.
                 </p>
                 <p className="ppal-text about-text">

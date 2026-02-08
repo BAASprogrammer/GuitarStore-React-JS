@@ -165,7 +165,7 @@
     }
     /* About Container */
     .about-container, .about-section{
-        padding: 0;
+        padding: 1rem;
     }
     /* Main Container */
     .main-container{

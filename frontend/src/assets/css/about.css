@@ -14,9 +14,10 @@
 }
 
 .about-section .section-title {
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
     font-size: 2.5rem;
     color: var(--primary-color);
+    margin: 0;
 }
 
 .about-text {
