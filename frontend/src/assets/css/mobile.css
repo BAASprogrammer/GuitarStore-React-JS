@@ -136,7 +136,7 @@
         position: absolute;
         top: 50px;
         right: 1.1rem;
-        width: 35%;
+        width: clamp(100px, 60vw, 200px);
         background: var(--white);
         box-shadow: var(--shadow-md);
         flex-direction: column;
