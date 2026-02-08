@@ -54,7 +54,7 @@
 
 .social-icons a:hover {
   color: var(--white);
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-strong) 100%);
+  background: var(--primary-color);
   transform: scale(1.15) translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 126, 0, 0.3);
 }

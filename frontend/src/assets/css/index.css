@@ -1,9 +1,7 @@
-/* Fonts and font-weights moved to src/assets/css/variables.css */
-
 body {
 	margin: 0;
 }
-/* Data Message (Home Loading) */
+
 .data-error-message {
 	position: absolute;
 	top: 50%;
@@ -13,13 +11,6 @@ body {
 	font-size: 1.5rem;
 }
 
-/* End Data Message */
-
-/* Header moved to `header.css` */
-/* See: src/assets/css/header.css */
-
-/* Header styles removed from this file to keep concerns separated */
-/* End header menu */
 .ppal-text {
 	font-style: italic;
 	font-size: 15pt;
@@ -41,41 +32,6 @@ body {
 	grid-template-columns: repeat(5, 1fr);
 	gap: 6rem;
 }
-
-/* Shoppingcart & modal styles moved to `shoppingcart.css` */
-/* See: src/assets/css/shoppingcart.css */
-
-/* Shoppingcart styles removed from this file to keep concerns separated */
-
-/* Main container moved to `products.css` */
-
-
-/* Modal layout moved to `shoppingcart.css`/`products.css` */
-
-
-/* Menu container moved to `products.css` */
-
-
-/* Grid item modal styles moved to `products.css` */
-
-
-/* Grid item image styles moved to `products.css` */
-
-
-/* Add-cart button styles moved to `products.css` (uses variables) */
-
-
-/* Product value and name styles moved to `products.css` */
-
-
-/* Empty cart button styles moved to `products.css` */
-
-
-/* Add/del cart styles moved to `products.css` */
-
-
-/* Pay & small-cart UI moved to `products.css` */
-/* End shoppingcart */
 
 .guitar-title {
 	font-size: 16pt;
