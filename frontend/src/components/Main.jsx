@@ -2,7 +2,7 @@ import Approutes from "./AppRoutes";
 
 export default function Main({dato, addCart, cart}){    
     return(
-        <main className="main-container">
+        <main className="main-container flex justify-center">
             <Approutes
                 dato = {dato}
                 cart = {cart}

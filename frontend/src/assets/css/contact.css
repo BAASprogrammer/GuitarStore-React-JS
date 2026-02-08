@@ -1,6 +1,5 @@
 .main-container {
-	display: flex;
-	justify-content: center;
+	/* Styles moved to utility classes */
 }
 
 .contact-section{

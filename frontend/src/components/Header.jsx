@@ -7,7 +7,7 @@ export default function Header({dataCart, deleteCart, emptyCart}){
     const nombretienda = "GuitarStore"
     return(
         <header className="sticky-menu">
-            <div className="header-container align-center">
+            <div className="header-container flex justify-between flex-wrap align-center">
                 <div className="header-logo left align-center">
                     <img src={require("../assets/images/header/guitar.png")} alt="Logo" width={'50px'} height={'50px'}></img>
                     <h1>{nombretienda}</h1> 

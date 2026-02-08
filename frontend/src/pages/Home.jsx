@@ -24,11 +24,11 @@ export default function Home({ dato, cart, addCart }){
         </span>
         <span className="guitar-dot guitar-dot--3"><FontAwesomeIcon className="guitar-icon" icon={faMusic} style={{transform: 'rotate(25deg)'}} /></span>
       </div>
-      <div className="grid welcome-container">
+      <div className="grid welcome-container justify-center align-center">
         <div>
           <div className="welcome-title font-weight-800">Bienvenido a <span className="store-title">GuitarStore</span></div>
           <div className="welcome-txt">Calidad, variedad y el sonido que buscas</div>
-          <div className="welcome-animation">
+          <div className="welcome-animation align-center gap-2">
             <span className="welcome-line"></span><span className="welcome-guitar">🎸</span>
           </div>
           <div className="flex button-home-container">
@@ -53,7 +53,7 @@ export default function Home({ dato, cart, addCart }){
           </div>
         </div>
         <div>
-          <div><img className="guitar-home" src={HomeGuitar} width="60%" alt="Guitarra de Bienvenida" /></div>
+          <div><img className="guitar-home flex justify-center align-center" src={HomeGuitar} width="60%" alt="Guitarra de Bienvenida" /></div>
         </div>
       </div>
       <div className="home-products-section">
@@ -63,7 +63,7 @@ export default function Home({ dato, cart, addCart }){
         <div>
           <div className="why-choose-us-title center font-weight-600">¿Por qué <span className="why-choose-us-title-end">elegirnos</span>?</div>
         </div>
-        <div className="why-choose-us-grid flex flex-wrap">
+        <div className="why-choose-us-grid flex flex-wrap justify-center align-center gap-2">
           <div className="why-choose-us-item center">
             <FontAwesomeIcon icon={faCertificate} size="2x" className="wcu-icon" />
             <div className="wcu-item-title font-weight-600">Calidad Garantizada</div>

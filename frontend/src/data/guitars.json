@@ -4,7 +4,7 @@
       "nombre": "Aurora Nylon",
       "descripcion": "Guitarra clásica de cuerdas de nylon, diseñada para ofrecer un sonido cálido, suave y balanceado.",
       "imagen": "guitar1.png",
-      "precio": 899000,
+      "precio": 89900,
       "categoria": "Clásica"
     },
     {
@@ -12,7 +12,7 @@
       "nombre": "Gibson Les Paul Studio",
       "descripcion": "Sonido potente y cálido con gran sustain, perfecta para rock y hard rock.",
       "imagen": "electric-guitar1.png",
-      "precio": 1299000,
+      "precio": 129900,
       "categoria": "Eléctrica"
     },
     {
@@ -20,7 +20,7 @@
       "nombre": "Ibanez RG Series",
       "descripcion": "Bajo diseñado para estilos modernos y metal.",
       "imagen": "bass2.png",
-      "precio": 749000,
+      "precio": 74000,
       "categoria": "Bajo"
     },
     {
@@ -28,7 +28,7 @@
       "nombre": "Yamaha Pacifica 112V",
       "descripcion": "Excelente relación precio-calidad, ideal para principiantes y músicos intermedios.",
       "imagen": "electroacustic1.png",
-      "precio": 399000,
+      "precio": 39000,
       "categoria": "Acústica"
     },
     {
@@ -36,7 +36,7 @@
       "nombre": "PRS SE Custom 24",
       "descripcion": "Diseño elegante con gran equilibrio tonal y excelente comodidad.",
       "imagen": "electric-guitar3.png",
-      "precio": 999000,
+      "precio": 309990,
       "categoria": "Eléctrica"
     },
     {
@@ -44,7 +44,7 @@
       "nombre": "Jackson Dinky JS32",
       "descripcion": "Bajo agresivo con mástil rápido, perfecto para metal y hard rock.",
       "imagen": "bass3.png",
-      "precio": 459000,
+      "precio": 159000,
       "categoria": "Bajo"
     },
     {
@@ -52,7 +52,7 @@
       "nombre": "Epiphone Les Paul Standard",
       "descripcion": "Clásico sonido Les Paul a un precio accesible, ideal para múltiples estilos.",
       "imagen": "guitar2.png",
-      "precio": 699000,
+      "precio": 299000,
       "categoria": "Acústica"
     },
     {
@@ -60,7 +60,7 @@
       "nombre": "Squier Classic Vibe Stratocaster",
       "descripcion": "Bajo sonido auténtico y excelente terminación.",
       "imagen": "bass1.png",
-      "precio": 529000,
+      "precio": 109000,
       "categoria": "Bajo"
     }
   ]

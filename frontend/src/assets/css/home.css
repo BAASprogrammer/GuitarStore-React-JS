@@ -15,8 +15,6 @@
   transform: translateX(-100%);
   opacity: 0;
   animation: slideIn 1.5s forwards;
-  justify-content: center;
-  align-items: center;
 }
 
 @keyframes slideIn {
@@ -43,11 +41,9 @@
 
 .welcome-animation {
   display: inline-flex;
-  align-items: center;
   cursor: pointer;
   border-radius: var(--br-xl);
   background: transparent;
-  gap: var(--gap-2);
 }
 
 .welcome-line{
@@ -121,9 +117,6 @@
 }
 
 .guitar-home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: var(--br-xl);
   box-shadow: var(--shadow-md);
   margin-left: auto;
@@ -149,9 +142,6 @@
 }
 
 .why-choose-us-grid {
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
   margin-top: 2rem;
 }
 
