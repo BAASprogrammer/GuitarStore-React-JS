@@ -1,10 +1,6 @@
 /* Product and cart item styles */
 .collection-txt{
 	color: var(--primary-color);
-	background: var(--primary-color);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
 }
 
 .main-container{

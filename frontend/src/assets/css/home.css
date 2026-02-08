@@ -108,7 +108,7 @@
 }
 
 .view-products:hover, .why-us:hover{
-  background: #d97d1a;
+  background: var(--button-hover-color);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 126, 0, 0.35);
 }
