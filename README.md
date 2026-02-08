@@ -1,13 +1,242 @@
-#Estado Proyecto:
-* Completado:
-  * Diseño interfaz
-  + Agregar productos al carro de compras
-  + Vaciar carro de compra
-  + Realizar suma total de valor de productos
-  + Agrupar productos agregados al carro de compras
-  + Habilitar botones de +/- cantidad en carro de compras
-  + Eliminar productos desde el carro de compras
-  + Implementar modo oscuro nativamente
-* Tomar en consideración:
-  + Se dejan datos estáticos para uso en la página de vercel
+# 🎸 GuitarStore - Tienda de Guitarras Online
 
+Tienda de guitarras modern y responsiva desarrollada con React. Ofrece una experiencia de compra completa con catálogo de productos, carrito funcional, validación de formularios y soporte para modo oscuro/claro.
+
+---
+
+## 🌟 Características Principales
+
+✨ **Catálogo de Productos**
+- 4 categorías: Clásicas, Acústicas, Eléctricas y Bajos
+- Filtrado dinámico por categoría
+- Información detallada de cada guitarra (nombre, descripción, precio)
+
+🛒 **Carrito de Compras Avanzado**
+- Agregar/eliminar productos
+- Controles de cantidad (+/-)
+- Cálculo automático de totales
+- Contador de items en el carrito
+- Vaciar carrito completo
+
+🌓 **Modo Obscuro/Claro**
+- Cambio de tema en tiempo real sin recargar
+- Persistente y nativamente integrado
+- Diseño optimizado para ambos modos
+
+📝 **Formulario de Contacto**
+- Validación robusta de campos
+- Mensajes de error dinámicos
+- Estilos glassmorphism moderno
+- Efecto blur en fondo
+
+📱 **Diseño Responsivo**
+- Totalmente responsive desde móvil hasta desktop
+- 5 breakpoints optimizados (1366px, 1024px, 768px, 576px, 423px)
+- Navegación intuitiva en todos los tamaños
+
+♿ **Accesibilidad**
+- Atributos ARIA implementados
+- Alt text en imágenes
+- Navegación por teclado
+- Jerrarquía semántica correcta
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Categoría | Tecnologías |
+|-----------|------------|
+| **Frontend** | React 18.2, React Router DOM 6 |
+| **Estilos** | CSS3 (Variables CSS, Flexbox, Grid) |
+| **Iconos** | FontAwesome, React Icons |
+| **Carrusel** | Swiper 12 |
+| **Build** | Create React App, ES6+ |
+
+---
+
+## 📋 Requisitos Previos
+
+- Node.js (v14 o superior)
+- npm (incluido con Node.js)
+- Git (opcional, para clonar)
+
+---
+
+## 🚀 Instalación y Uso
+
+### 1. **Clonar o descargar el repositorio**
+```bash
+git clone <url-del-repositorio>
+cd TiendaGuitarras-React-JS/frontend
+```
+
+### 2. **Instalar dependencias**
+```bash
+npm install
+```
+
+### 3. **Ejecutar en desarrollo**
+```bash
+npm start
+```
+La aplicación se abrirá en `http://localhost:3000`
+
+### 4. **Build para producción**
+```bash
+npm run build
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+frontend/
+├── public/                 # Archivos estáticos
+│   ├── index.html         # Punto de entrada HTML
+│   └── manifest.json      # Manifest PWA
+├── src/
+│   ├── assets/
+│   │   ├── css/           # Estilos globales y por página
+│   │   ├── fonts/         # Fuentes personalizadas (Montserrat, Lato, Arimo)
+│   │   └── images/        # Imágenes (header, home, products)
+│   ├── contexts/
+│   │   └── ColorProvider.jsx    # Context para tema oscuro/claro
+│   ├── pages/
+│   │   ├── Home.jsx       # Página principal con hero y productos
+│   │   ├── Products.jsx   # Listado y filtrado de guitarra
+│   │   ├── Contact.jsx    # Formulario de contacto con validación
+│   │   └── About.jsx      # Información de la empresa
+│   ├── components/
+│   │   ├── Header.jsx     # Encabezado con navegación
+│   │   ├── Footer.jsx     # Pie de página
+│   │   ├── ShoppingCart.jsx  # Carrito modal
+│   │   ├── Menu.jsx       # Menú de navegación
+│   │   ├── Switch.jsx     # Toggle dark/light mode
+│   │   └── ...
+│   ├── data/
+│   │   └── guitars.json   # Datos de productos estáticos
+│   └── App.jsx            # Componente principal y ruteo
+└── package.json           # Dependencias del proyecto
+```
+
+---
+
+## 🎨 Características de Diseño
+
+### **Sistema de Variables CSS**
+- Paleta de colores consistente
+- Espaciado estandarizado
+- Sombras y efectos predefinidos
+- Clases utilitarias para flexbox, grid y alineación
+
+### **Temas**
+- **Light Theme**: Colores claros y cálidos (naranja #FF7E00 como primario)
+- **Dark Theme**: Fondos oscuros con contraste optimizado
+
+### **Efectos Visuales**
+- Gradientes suaves en secciones principales
+- Efecto glassmorphism en formularios
+- Animaciones de hover en botones e iconos
+- Elementos decorativos animados (puntos, iconos flotantes)
+
+---
+
+## 🔄 Flujo de Funcionamiento
+
+1. **Página de Inicio (Home)**
+   - Hero section con bienvenida
+   - Catálogo de productos destacados
+   - Sección "¿Por qué elegirnos?" con beneficios
+
+2. **Productos**
+   - Filtro por categoría
+   - Agregar/quitar del carrito
+   - Vista previa de detalles
+
+3. **Carrito**
+   - Modal overlay con productos agregados
+   - Control de cantidades
+   - Cálculo automático de total
+   - Opción vaciar carrito
+
+4. **Contacto**
+   - Formulario con validación
+   - Feedback de errores en tiempo real
+   - Estilos glassmorphism
+
+5. **Acerca de**
+   - Información de la empresa
+   - Enlaces a redes sociales
+
+---
+
+## 📊 Características Técnicas Destacadas
+
+✅ **React Hooks**: useState, useEffect, useContext
+✅ **Context API**: Gestión de temas (dark/light)
+✅ **React Router**: Navegación SPA sin recargas
+✅ **Validación de Formularios**: Regex, validación condicional
+✅ **CSS Variables**: Reutilización de valores de diseño
+✅ **Clases Utilitarias**: Enfoque utility-first para layouts
+✅ **Responsive Design**: Mobile-first y adaptable
+✅ **Accesibilidad WCAG**: aria-labels, semantic HTML
+
+---
+
+## 🧪 Testing
+
+Para ejecutar tests:
+```bash
+npm test
+```
+
+Presionar `a` para ejecutar todos los tests.
+
+---
+
+## 🌐 Deployment
+
+El proyecto está optimizado para ser desplegado en **Vercel**, **Netlify** o cualquier servicio de hosting estático.
+
+**Vercel (recomendado):**
+```bash
+npm install -g vercel
+vercel
+```
+
+---
+
+## 📦 Datos de Productos
+
+Los datos de productos se encuentran en [`src/data/guitars.json`](frontend/src/data/guitars.json) y contienen información como:
+- ID único
+- Nombre y descripción
+- Kategoría (clásica, acústica, eléctrica, bajo)
+- Precio
+- Imagen
+
+---
+
+## 🤝 Contribuciones
+
+Este es un proyecto personal. Si deseas hacer mejoras, puedes crear un fork y enviar pull requests.
+
+---
+
+## 📝 Licencia
+
+Este proyecto está disponible bajo licencia MIT.
+
+---
+
+## 📧 Contacto
+
+Para consultas o sugerencias sobre el proyecto:
+- **Email**: contacto@guitare.com
+- **Redes Sociales**: Disponibles en la página de Acerca de
+
+---
+
+**Última actualización:** Febrero 2026  
+**Versión:** 1.0.0
