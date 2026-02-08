@@ -2,7 +2,7 @@ export default function Footer(){
     return(
         <footer>
             <div className="ppal-text signature-footer center">
-                <p>© 2026 Guitar Store - All rights reserved</p>
+                <p>© Guitar Store 2026 - Todos los derechos reservados</p>
             </div>
         </footer>
     )

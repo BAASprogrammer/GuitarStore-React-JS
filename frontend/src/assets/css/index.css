@@ -52,6 +52,3 @@ button:disabled:hover{
 .product-description{
 	height: 6rem;
 }
-
-/* Footer styles moved to `footer.css` and home styles to `home.css` */
-/* See: src/assets/css/footer.css and src/assets/css/home.css */
