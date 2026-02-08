@@ -56,17 +56,6 @@
         display:none;
     }
 	
-	/* Shopping Cart */
-    .cart-badge {
-        font-size: 0.6rem;
-        padding: 2px 4px;
-        bottom: 1.2rem;
-        left: 4rem;
-        top: auto;
-    }
-    .empty-cart-button, .pay-cart-button{
-        width: 70%;
-    }
 	/* Text */
     .ppal-text{
         font-size: 1rem;
@@ -82,11 +71,36 @@
         width: 110px;
     }
 
-	/* Shopping Cart Modal */
+	/* Shopping Cart */
+    .cart-badge {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+    }
+    .empty-cart-button, .pay-cart-button{
+        width: 70%;
+    }
     .modal-shoppingcart.data-shoppingcart{
         width: fit-content;
     }
+    .grid-item-modal input.quantity-cart, .grid-item-modal .add-del-cart{
+        font-size: 0.7rem;
+    }
 
+    .grid-item-modal img{
+        width: 70%;
+    }
+    .add-cart-button{
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        width: 60%;
+    }
+    .darkmode-shop {
+        right: 1rem;
+    }
+    .modal-shoppingcart.empty-shoppingcart {
+        font-size: 0.9rem;
+        width: max-content;
+    }
     .welcome-title{
         font-size: 2rem;
     }
@@ -106,20 +120,6 @@
         bottom: 200px;
     }
 
-	/* Shopping Cart Items */
-    .grid-item-modal input.quantity-cart, .grid-item-modal .add-del-cart{
-        font-size: 0.7rem;
-    }
-
-    .grid-item-modal img{
-        width: 70%;
-    }
-    .add-cart-button{
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        width: 60%;
-    }
-
     /* Menu toggle button for mobile */
     .menu-toggle-button{
         display: block;
@@ -135,17 +135,22 @@
     .menu-opened{
         position: absolute;
         top: 50px;
-        right: 0;
-        width: 30%;
+        right: 1.1rem;
+        width: 35%;
         background: var(--white);
         box-shadow: var(--shadow-md);
         flex-direction: column;
-        border-radius: 0.5rem;
+        border-radius: .5rem;
         padding: 1rem;
+        justify-content: flex-start;
+        border: 2px solid var(--primary-color);
+        opacity: .9;
+        z-index: 12;
     }
     .menu-opened .menu-link{
-        padding: 0.1rem;
-        border-bottom: 1px solid var(--border-light);
+        padding: .7rem .1rem;
+        border-bottom: 2px solid var(--border-light);
+        width: 100%;
     }
     /* Categories Buttons Container */
     .categories-buttons-container .category-button{
@@ -158,11 +163,7 @@
     .why-choose-us-item{
         flex: 1 1 auto;
     }
-    /* Dark-light mode shop */
-    .darkmode-shop {
-        transform: translateX(-10px);
-        margin-top: 0.7rem;
-    }
+
     /* About Container */
     .about-container, .about-section{
         padding: 1rem;
