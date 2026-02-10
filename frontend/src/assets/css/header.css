@@ -1,7 +1,7 @@
 /* Header styles moved from index.css */
 .header-container {
 	background-color: var(--white);
-	padding: .5rem 3rem;
+	padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 5vw, 3rem); /* Padding responsivo */
 	border-bottom: 1px solid var(--border-header);
 }
 
@@ -17,7 +17,7 @@
 }
 
 .header-logo h1{
-	font-size: 1.5rem;
+	font-size: clamp(1.1rem, 3vw, 1.5rem); /* Logo escalable */
 }
 
 .header-logo a{
@@ -27,11 +27,11 @@
 
 .logo-container {
 	font-weight: var(--weight-bold);
-	font-size: 1.5rem;
+	font-size: clamp(1.2rem, 3vw, 1.5rem); /* Contenedor logo responsivo */
 }
 
 .logo-guitar {
-	font-size: 1.8rem;
+	font-size: clamp(1.4rem, 3.5vw, 1.8rem); /* Icono guitarra responsivo */
 }
 
 .logo-text {
@@ -51,14 +51,18 @@
 /* Header menu */
 .header-menu {
 	display: flex;
-	gap: 1.5rem;
+	gap: clamp(0.8rem, 3vw, 1.5rem); /* Gap adaptativo */
 	justify-content: center;
 	align-items: center;
-	padding: 0 1rem;
-	margin-top: 2rem;
+	padding: 0 clamp(0.5rem, 2vw, 1rem);
+	margin-top: clamp(1rem, 3vw, 2rem);
+	flex-wrap: wrap; /* Permite wrap en pantallas pequeñas */
+	position: absolute;
+	left: clamp(33%, 35%, 50%); /* temporal % */
+	bottom: 1rem;
 }
 .menu-title {
-	font-size: 1.2rem;
+	font-size: clamp(1rem, 2.5vw, 1.2rem);
 	font-weight: var(--weight-bold);
 	color: var(--primary-color);
 }
@@ -67,7 +71,7 @@
 	font-weight: var(--weight-semi-bold);
 	font-family: var(--font-arimo);
 	text-decoration: none;
-	font-size: 1.1rem;
+	font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Texto menú responsivo */
 	position: relative;
 	transition: var(--transition-smooth);
 }
@@ -113,11 +117,6 @@
 	cursor: pointer;
 }
 
-.header-menu.menu-closed{
-	position: absolute;
-	left: clamp(33%, 35%, 50%); /* temporal % */
-	bottom: 1rem;
-}
 
 .menu-overlay{
 	position: fixed;

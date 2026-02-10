@@ -1,21 +1,21 @@
 .contact-section{
-	width: 45%;
-	padding: 2rem;
+	width: clamp(320px, 45%, 600px); /* Ancho mínimo, preferido y máximo */
+	padding: clamp(1rem, 4vw, 2rem); /* Padding adaptativo */
 	background: var(--bg-contact-light);
 	border-radius: 10px;
 	box-shadow: var(--shadow-card-sm);		
-	margin: 5vh 0;
+	margin: clamp(2vh, 5vh, 8vh) auto; /* Centrado y margen adaptativo */
 	overflow: hidden;
 	border: 2px solid var(--border-orange-15);
 }
 
 .section-title {
 	color: var(--primary-color);
-	font-size: 2rem;
+	font-size: clamp(1.5rem, 4vw, 2rem); /* Título responsivo */
 	margin: 0;
 }
 .form-group{
-  width: 70%;
+  width: clamp(250px, 90%, 400px); /* Mejor adaptación en todos los tamaños */
 }
 
 .form-group label{
@@ -28,14 +28,16 @@
 .form-group input,
 .form-group textarea{
 	width: 100%;
-	padding: 0.75rem;
+	padding: clamp(0.6rem, 2vw, 0.75rem); /* Padding adaptativo */
 	border: 2px solid var(--border-orange-20);
 	border-radius: 8px;
 	box-sizing: border-box;
 	background: var(--bg-white-95);
 	color: var(--text-warm-dark);
-	font-size: 1rem;
+	font-size: clamp(0.9rem, 2.5vw, 1rem); /* Tamaño de texto adaptativo */
 	transition: var(--transition-fast);
+	/* Mejor usabilidad táctil en móviles */
+	min-height: 44px; /* Tamaño mínimo recomendado para touch */
 }
 
 .form-group input:focus,
@@ -51,30 +53,71 @@
 }
 
 .error-message{
-  color: #ff4444;
+  color: var(--error-message);
   font-size: 0.9rem;
   margin-top: 0.3rem;
   font-weight: var(--weight-semi-bold);
   margin-bottom: 0;
 }
 
+.success-message{
+  color: var(--success-message);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-weight: var(--weight-semi-bold);
+  margin-bottom: 0;
+}
+
+.success-message-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  background: none;
+  border: none;
+  color: #fff;
+  background-color: #28a745;
+  font-size: 1.2rem;
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--shadow-primary-sm);
+  transition: var(--transition-fast);
+}
+.close-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-md);
+}
+
 .submit-button{
 	background: var(--primary-color);
 	color: var(--white);
 	border: none;
-	padding: 0.75rem 1.5rem;
+	padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
 	border-radius: 8px;
 	cursor: pointer;
 	font-weight: var(--weight-bold);
-	font-size: 1rem;
-	margin-top: 1rem;
-	width: 100%;
+	font-size: clamp(0.9rem, 2.5vw, 1rem);
+	margin-top: clamp(0.75rem, 2vw, 1rem);
+	width: clamp(200px, 80%, 300px); /* Botón con ancho máximo para mejor diseño */
 	box-shadow: var(--shadow-primary-md);
 	transition: var(--transition-fast);
+	min-height: 48px; /* Touch-friendly */
 }
 
 .submit-button:hover{
-	background: var(--primary-hover);
 	transform: translateY(-2px);
 	box-shadow: var(--shadow-primary-xl);
 }
@@ -109,13 +152,14 @@
 }
 
 /* Individual variations (size, start position, duration, delay, path)
-   Duraciones aumentadas para animación más lenta y suave */
-.dot--1 { width: 18px; height: 18px; left: 8%; top: -6%; animation-name: float-vertical-1; animation-duration: 20s; animation-delay: 0s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-.dot--2 { width: 28px; height: 28px; left: 30%; top: -12%; animation-name: float-vertical-2; animation-duration: 28s; animation-delay: 1.2s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-.dot--3 { width: 14px; height: 14px; left: 52%; top: -8%; animation-name: float-vertical-3; animation-duration: 24s; animation-delay: 0.5s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-.dot--4 { width: 36px; height: 36px; left: 72%; top: -18%; animation-name: float-vertical-2; animation-duration: 36s; animation-delay: 2s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-.dot--5 { width: 10px; height: 10px; left: 45%; top: -5%; animation-name: float-vertical-1; animation-duration: 18s; animation-delay: 3s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
-.dot--6 { width: 22px; height: 22px; left: 85%; top: -10%; animation-name: float-vertical-3; animation-duration: 26s; animation-delay: 0.8s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+   Duraciones aumentadas para animación más lenta y suave
+   Tamaños usando clamp() para responsividad */
+.dot--1 { width: clamp(12px, 2vw, 18px); height: clamp(12px, 2vw, 18px); left: 8%; top: -6%; animation-name: float-vertical-1; animation-duration: 20s; animation-delay: 0s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.dot--2 { width: clamp(18px, 3vw, 28px); height: clamp(18px, 3vw, 28px); left: 30%; top: -12%; animation-name: float-vertical-2; animation-duration: 28s; animation-delay: 1.2s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.dot--3 { width: clamp(10px, 1.5vw, 14px); height: clamp(10px, 1.5vw, 14px); left: 52%; top: -8%; animation-name: float-vertical-3; animation-duration: 24s; animation-delay: 0.5s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.dot--4 { width: clamp(22px, 4vw, 36px); height: clamp(22px, 4vw, 36px); left: 72%; top: -18%; animation-name: float-vertical-2; animation-duration: 36s; animation-delay: 2s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.dot--5 { width: clamp(6px, 1vw, 10px); height: clamp(6px, 1vw, 10px); left: 45%; top: -5%; animation-name: float-vertical-1; animation-duration: 18s; animation-delay: 3s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.dot--6 { width: clamp(14px, 2.5vw, 22px); height: clamp(14px, 2.5vw, 22px); left: 85%; top: -10%; animation-name: float-vertical-3; animation-duration: 26s; animation-delay: 0.8s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
 
 /* Keyframes: vertical travel with gentle horizontal oscillation and fade */
 @keyframes float-vertical-1 {

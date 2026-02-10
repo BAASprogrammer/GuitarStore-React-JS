@@ -3,6 +3,7 @@ import "../assets/css/contact.css";
 
 export default function Contact(){
     const [error, setError] = useState({});
+    const [sendEmail, setSendEmail] = useState("");
     const [formData, setFormData] = useState({
         general: "",
         nombre: "",
@@ -44,14 +45,18 @@ export default function Contact(){
     const handleSubmit = (event) => {
         event.preventDefault();
         if (validateForm()) {
-            alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.");
+            setSendEmail("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.");
             setFormData({
                 nombre: "",
                 email: "",
                 mensaje: ""
             });
+            setTimeout(() => {
+                setSendEmail("");
+            }, 5000);
         }else{
             setError(newErrors);
+            setSendEmail("");
         }
     }
     return(
@@ -86,6 +91,12 @@ export default function Contact(){
                     </div>
                     <div>{error.general && <p className="error-message center">{error.general}</p>}</div>
                     <button type="submit" className="submit-button">Enviar</button>
+                    {sendEmail && (
+                        <div className="success-message-container center">
+                            <p className="success-message">{sendEmail}</p>
+                            <button type="button" className="close-button" title="Cerrar mensaje" onClick={() => setSendEmail("")}>×</button>
+                        </div>
+                    )}
                 </form>
             </div>
         </section>

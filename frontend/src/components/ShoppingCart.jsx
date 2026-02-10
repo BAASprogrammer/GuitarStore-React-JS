@@ -139,11 +139,11 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                                 </div>
                                                 {dataCart.length !== 0 &&(
                                                     <div>
-                                                        <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' onClick={handleEmptyCart}>Vaciar carrito</button>
-                                                        <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
+                                                        <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' width="180" onClick={handleEmptyCart}>Vaciar carrito</button>
+                                                        {message && ( <div className='pay-message'>Función no disponible</div>)}
+                                                        <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' width="180" onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
                                                     </div>
                                                 )}
-                                                {message && ( <div className='pay-message'>Función no disponible</div>)}
                                             </div>
                                         </div>
                                     </div>

@@ -1,6 +1,21 @@
 :root{
   /* Fonts */
   --font-arimo: "Arimo", sans-serif;
+  /* Common Spacing & Sizing */
+  --size-font-md: 0.9rem;
+  --size-font-sm: 0.8rem;
+  --size-xs: 0.25rem;
+  --size-sm: 0.35rem;
+  --size-md: 0.5rem;
+  --size-lg: 0.75rem;
+  --size-xl: 1rem;
+  --size-xxl: 1.5rem;
+  --size-btn: 0.6rem;
+  --size-btn-lg: 1.2rem;
+  --size-square: 24px;
+  --size-square-lg: 36px;
+  --size-square-xl: 40px;
+  --percent-half: 48%;
   --font-lato: "Lato", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
 
@@ -83,6 +98,7 @@
   /* Status & Semantic Colors */
   --danger: rgba(189,1,1,1);
   --error-message: rgba(255, 68, 68, 1);
+  --success-message: rgba(40, 167, 69, 1);
   
   /* Decorative / Animation Colors */
   --dot-gradient-start: var(--logo-grad-end);

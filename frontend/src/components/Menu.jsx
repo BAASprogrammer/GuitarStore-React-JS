@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function Menu(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     return(
         <div>
             <div>

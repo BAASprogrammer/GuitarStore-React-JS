@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCertificate, faTruck, faShieldHalved, faGuitar, faMusic, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCertificate, faTruck, faShieldHalved, faGuitar, faMusic, faStar, faShoppingCart, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Products from "./Products";
 import HomeGuitar from "../assets/images/home/acoustic-guitar.jpg";
 import "../assets/css/home.css";
@@ -39,7 +39,7 @@ export default function Home({ dato, cart, addCart }){
                         productsSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}>
-                Explorar Productos
+                Ver Productos <FontAwesomeIcon icon={faShoppingCart} />
             </button>
             <button className="why-us" title="¿Por qué elegirnos?"
                 onClick={() => {
@@ -48,7 +48,7 @@ export default function Home({ dato, cart, addCart }){
                         whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 }}>
-                Conoce más
+                Conoce más <FontAwesomeIcon icon={faInfoCircle} />
             </button>
           </div>
         </div>

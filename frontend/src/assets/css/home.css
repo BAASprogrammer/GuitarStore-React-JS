@@ -10,8 +10,8 @@
 
 .welcome-container{
 	grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
-	margin-top: 3rem;
+  gap: clamp(2rem, 8vw, 5rem); /* Gap responsivo */
+	margin-top: clamp(1.5rem, 5vw, 3rem);
   transform: translateX(-100%);
   opacity: 0;
   animation: slideIn 1.5s forwards;
@@ -25,13 +25,13 @@
 }
 
 .welcome-title{
-	font-size: 3.5rem;
+	font-size: clamp(2rem, 7vw, 3.5rem); /* Título responsivo */
 	color: var(--primary-color);
 }
 
 .welcome-txt{
-  margin-top: 1rem;
-  font-size: 1.1rem;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Texto responsivo */
   font-weight: var(--weight-semi-bold);
   color: var(--text-dark);
 }
@@ -82,28 +82,29 @@
 
 /* Home Products Section*/
 .home-products-section {
-	padding: 4rem 0;
+	padding: clamp(2rem, 6vw, 4rem) 0; /* Padding vertical responsivo */
 	background: linear-gradient(180deg, var(--white) 0%, var(--bg-light) 100%);
 }
 
 .home-products-section h1 {
-	margin-bottom: 2rem;
+	margin-bottom: clamp(1rem, 4vw, 2rem);
 	color: var(--text-dark);
 }
 
 .view-products, .why-us{
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   background: var(--primary-color);
   box-shadow: var(--shadow-md);
   color: var(--white);
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   margin-right: 1rem;
   border-radius: var(--br-lg);
   cursor: pointer;
   font-weight: var(--weight-bold);
-  font-size: 1rem;
-  width: 13rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  width: 12rem;
+  min-height: 44px; /* Touch-friendly */
   transition: var(--transition-fast);
 }
 
@@ -121,11 +122,13 @@
 
 /* Home: why choose us */
 .why-choose-us{
-	margin-top: 2rem;
+	margin-top: clamp(1rem, 4vw, 2rem);
+	overflow: hidden; /* Evita desbordamiento */
+	width: 100%;
 }
 
 .why-choose-us-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Título responsivo */
   color: var(--text-dark);
 }
 
@@ -134,17 +137,24 @@
 }
 
 .why-choose-us-grid {
-  margin-top: 2rem;
+  margin-top: clamp(1rem, 3vw, 2rem);
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .why-choose-us-item {
   border: 2px solid var(--border-light);
   border-radius: var(--br-lg);
   box-shadow: var(--shadow-sm);
-  padding: 2rem;
-  height: 10rem;
+  padding: 1.5rem 1rem;
+  min-height: 9rem;
+  flex: 1 1 calc(33.333% - 1.5rem); /* 3 columnas en desktop */
+  max-width: 300px;
+  min-width: 0; /* Permite que el item se encoja si es necesario */
   background-color: var(--white);
   transition: var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .why-choose-us-item:hover {
@@ -158,15 +168,16 @@
 }
 
 .wcu-item-title{
-	margin-top: 1rem;
-	font-size: 1.05rem;
+	margin-top: 0.75rem;
+	font-size: 1rem;
 }
 
 .wcu-item-description{
-	padding-top: 0.9rem;
+	padding-top: 0.5rem;
 	color: var(--text-dark);
-	font-size: 0.95rem;
+	font-size: 0.9rem;
 	font-weight: var(--weight-medium);
+	margin: 0;
 }
 
 .guitar-dot {

@@ -85,6 +85,13 @@
 .dark-theme .close-shopping-cart {
     color: var(--text-95)!important;
 }
+
+.dark-theme .modal-row.header .grid-item-modal label,
+.dark-theme .modal-row.footer .grid-item-modal:first-child,
+.dark-theme .modal-row .grid-item-modal label,
+.dark-theme .status-shoppingcart h3{
+    color: var(--text-95);
+}
 /* Products */
 .dark-theme .product-container,
 .dark-theme .product-data {
@@ -134,7 +141,10 @@
 
 .dark-theme .grid-item{
     background-color: rgba(30, 30, 35, 0.5);
-    border: 1px solid var(--border-dark-text);
+    border: 2px solid var(--border-dark-text);
+}
+.dark-theme .grid-item img {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .dark-theme .grid-item:hover {
@@ -178,20 +188,7 @@
     color: var(--white);
 }
 
-/* Button toggle menu */
-.dark-theme .menu-opened{
-    background-color: var(--black);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 126, 0, 0.2);
-    border-color: #b8a899;
-}
-.dark-theme .menu-opened .menu-link{
-    color: var(--white);
-}
-.dark-theme .header-menu::before{
-    border-color: transparent transparent var(--dark-overlay) transparent;
-    filter: drop-shadow(0 -1px 1px rgba(255, 126, 0, 0.3));
-}
+
 /* Contact Form - Dark Theme */
 .dark-theme .contact-section {
     background: rgba(28, 28, 32, 0.75);
