@@ -2,8 +2,17 @@ import { useEffect, useState } from 'react';
 
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
-    const [message,setMessage] = useState(false)
+    const [message,setMessage] = useState({})
     const [isOpenCart, setIsOpenCart] = useState(false)
+    const [confirmDelete, setConfirmDelete] = useState(null)
+
+    const dataMessage = {
+        "pay": "Función no disponible",
+        "empty": "Carrito vacío",
+        "delete": "Producto eliminado",
+        "todelete": "¿Desea eliminar el producto del carrito?",
+        "max": "Cantidad máxima alcanzada"
+    }
     /* Logic to open and close the shopping cart modal */
     const handleCart = () => {
         setIsOpenCart(!isOpenCart);
@@ -36,13 +45,12 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const deleteProduct = (idproducto) => {
         setCantidad((prevcantidad) =>{
             const newcantidad = {...prevcantidad} // creates a copy of the original object
-            if(newcantidad[idproducto] > 0) {
+            if(newcantidad[idproducto] > 1) {
                 newcantidad[idproducto] -= 1 
+            } else if(newcantidad[idproducto] === 1) {
+                setConfirmDelete(idproducto);
+                setMessage({ type: "todelete" });
             }
-            if (newcantidad[idproducto] === 0) {
-                deleteCart(idproducto)
-                delete newcantidad[idproducto]
-            } 
             return newcantidad
         })
     }
@@ -67,18 +75,29 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     }
 
     // Logic to handle mouseover and mouseout events
-    useEffect(() => {
-        if (message) {
-            setMessage(true);
-        }        
-    }, [message]) // This will execute when 'message' changes state
 
     const handleMouseOverPayCart = () => {
-        setMessage(true); // Changes 'message' to true when the mouse hovers over the button
+        setMessage({ type: "pay" }); // Changes 'message' to indicate pay message
     }
 
     const handleMouseOutPayCart = () => { 
-        setMessage(false); // Changes 'message' to false when the mouse leaves the button
+        setMessage({}); // Clears the message
+    }
+
+    const confirmDeleteProduct = () => {
+        deleteCart(confirmDelete);
+        setCantidad((prev) => {
+            const newcant = {...prev};
+            delete newcant[confirmDelete];
+            return newcant;
+        });
+        setConfirmDelete(null);
+        setMessage({});
+    }
+
+    const cancelDeleteProduct = () => {
+        setConfirmDelete(null);
+        setMessage({});
     }
 
     // Calculate total items in cart
@@ -90,6 +109,21 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     };
 
     return(<div className="right shoppingcart">
+                {isOpenCart && <div className='overlay-shopping-cart' onClick={handleCart}></div>}
+                {message.type === "todelete" && (
+                    <>
+                        <div className='confirm-overlay' onClick={cancelDeleteProduct}></div>
+                        <div className="confirm-modal">
+                            <div className="modal-content">
+                                <p>{dataMessage.todelete}</p>
+                                <div className="button-container">
+                                    <button onClick={cancelDeleteProduct}>Cancelar</button>
+                                    <button onClick={confirmDeleteProduct}>Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
                 <div className="container-shoppingcart center">
                     <button className='button-shoppingcart' title='Carrito de compras'>
                         <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>
@@ -135,12 +169,12 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                         <div>
                                             <div className="grid modal-row footer">
                                                 <div className="grid-item-modal right" >
-                                                    Total a pagar : $ {dataCart.reduce((total, item) => Math.floor(((total + item.valor)*cantidad[item.id] || 1)*100)/100 || item.valor , 0)}
+                                                    Total a pagar : $ {dataCart.reduce((total, item) => Math.floor(((total + item.precio)*cantidad[item.id] || 1)*100)/100 || item.precio , 0)}
                                                 </div>
                                                 {dataCart.length !== 0 &&(
                                                     <div>
                                                         <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' width="180" onClick={handleEmptyCart}>Vaciar carrito</button>
-                                                        {message && ( <div className='pay-message'>Función no disponible</div>)}
+                                                        {message.type === "pay" && ( <div className='pay-message'>{dataMessage[message.type]}  </div>)}
                                                         <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' width="180" onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
                                                     </div>
                                                 )}
