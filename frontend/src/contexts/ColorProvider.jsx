@@ -1,21 +1,21 @@
 import React, { useContext, useState, useEffect, createContext } from 'react';
 
-// Crear contexto
+// Create context
 const ColorContext = createContext()
-// función auxiliar fuera del componente por si se requiere utilizar por fuera
+// Helper function outside the component in case it needs to be used externally
 const getBackgroundColor = (isDarkTheme) => { return isDarkTheme ? '#000000' : '#ffffff'}
 
 export default function ColorProvider({children}) {
-    // variable que determina y función que setea el valor del tema oscuro, para activar el CSS
+    // Variable that determines and function that sets the dark theme value, to activate CSS
     const [isDarkTheme, setIsDarkTheme] = useState(() => {
-        // se obtiene valor almacena del tema guardado en localStorage
+        // Get the stored theme value from localStorage
         const savedTheme = localStorage.getItem("isDarkTheme")
-        // retorna booleano
+        // Return boolean
         return savedTheme === "true"
     })
-    // Setea el valor del booleano para el cambio de tema
+    // Sets the boolean value for theme change
     const toggleTheme = () => {
-        // setea el nuevo valor y almacena el dato en localStorage
+        // Sets the new value and stores the data in localStorage
         setIsDarkTheme(prevTheme => {
             const newTheme = !prevTheme
             localStorage.setItem("isDarkTheme", newTheme)
@@ -24,7 +24,7 @@ export default function ColorProvider({children}) {
     }
     
     useEffect(() => {
-        // guarda el valor del nuevo color de fondo en la variable
+        // Saves the value of the new background color in the variable
         const newBackgroundColor = getBackgroundColor(isDarkTheme)
         document.body.style.backgroundColor = newBackgroundColor
     }, [isDarkTheme]);

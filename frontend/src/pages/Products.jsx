@@ -5,7 +5,7 @@ export default function Products({dato, addCart, cart}){
     const [filterCategory, setFilterCategory] = useState('todas');    
     const filteredData = filterCategory === 'todas' ? dato : dato.filter(item => item.categoria.toLowerCase().includes(filterCategory.toLowerCase()));
     
-    // Pasar filteredData a Products
+    // Filtered data to display
     const dataToShow = filteredData; 
     const formatCurrency = useCurrency(); 
     
