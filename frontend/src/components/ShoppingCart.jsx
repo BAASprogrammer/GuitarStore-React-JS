@@ -1,9 +1,19 @@
 import { useEffect, useState } from 'react';
+import { useCurrencyFormatter } from '../hooks/useCurrencyFormatter';
 
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
-    const [message,setMessage] = useState(false)
+    const [isMessagePay,setIsMessagePay] = useState(false)
     const [isOpenCart, setIsOpenCart] = useState(false)
+    const [message, setMessage] = useState({})
+
+    const dataMessage = {
+        pay: "Función no disponible",
+        delete: "Producto eliminado del carrito",
+        todelete: "¿Desea eliminar el producto del carrito?",
+        max: "Cantidad máxima alcanzada"
+    }
+    const formatCurrency = useCurrencyFormatter();
     /* Logic to open and close the shopping cart modal */
     const handleCart = () => {
         setIsOpenCart(!isOpenCart);
@@ -39,6 +49,16 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
             if(newcantidad[idproducto] > 0) {
                 newcantidad[idproducto] -= 1 
             }
+            if (newcantidad[idproducto] < 1) {
+                setIsMessagePay(true);
+                setMessage(dataMessage.pay);
+                if (window.confirm(dataMessage.todelete)) {
+                    deleteCart(idproducto)
+                    delete newcantidad[idproducto]
+                } else {
+                    newcantidad[idproducto] = 1
+                }
+            }
             if (newcantidad[idproducto] === 0) {
                 deleteCart(idproducto)
                 delete newcantidad[idproducto]
@@ -68,17 +88,17 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     // Logic to handle mouseover and mouseout events
     useEffect(() => {
-        if (message) {
-            setMessage(true);
+        if (isMessagePay) {
+            setIsMessagePay(true);
         }        
-    }, [message]) // This will execute when 'message' changes state
+    }, [isMessagePay]) // This will execute when 'isMessagePay' changes state
 
     const handleMouseOverPayCart = () => {
-        setMessage(true); // Changes 'message' to true when the mouse hovers over the button
+        setIsMessagePay(true); // Changes 'isMessagePay' to true when the mouse hovers over the button
     }
 
     const handleMouseOutPayCart = () => { 
-        setMessage(false); // Changes 'message' to false when the mouse leaves the button
+        setIsMessagePay(false); // Changes 'isMessagePay' to false when the mouse leaves the button
     }
 
     // Calculate total items in cart
@@ -90,8 +110,9 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     };
 
     return(<div className="right shoppingcart">
+                {isOpenCart && <div className='overlay-shopping-cart' onClick={() => setIsOpenCart(false)}></div>}
                 <div className="container-shoppingcart center">
-                    <button className='button-shoppingcart' title='Carrito de compras'>
+                    <button className='button-shoppingcart' title='Carrito de compras' onClick={() => setIsOpenCart(true)}>
                         <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>
                     {/* Badge with quantity */}
                     {totalCount > 0 && (
@@ -102,7 +123,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                     </button>
                     {dataCart.length !== 0 ? (
                     <div className={`modal-shoppingcart ${isOpenCart ? 'data-shoppingcart' : 'closed-shoppingcart'} right`}>
-                        <span className='close-shopping-cart' onClick={handleCart}>x</span>
+                        <span className='close-shopping-cart' title='Cerrar carro' onClick={() => setIsOpenCart(false)}>x</span>
                         <div className="status-shoppingcart center">
                             <h3>Productos <span>Carro</span></h3>
                         </div>
@@ -121,7 +142,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                                 <div key={item.id} className="grid modal-row">
                                                     <div className="grid-item-modal"><img src={require(`../assets/images/products/${item.imagen}`)} alt="Guitarra"></img></div>
                                                     <div className="grid-item-modal"><label title={item.nombre}>{item.nombre}</label></div>
-                                                    <div className="grid-item-modal"><label>${item.precio}</label></div>
+                                                    <div className="grid-item-modal"><label>{formatCurrency(item.precio)}</label></div>
                                                     <div className="grid-item-modal">
                                                         <div className='flex justify-center align-center gap-1 quantity-container'>
                                                             <button className="add-del-cart" onClick={() => deleteProduct(item.id)} title='Disminuir cantidad'>-</button>
@@ -135,12 +156,12 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                         <div>
                                             <div className="grid modal-row footer">
                                                 <div className="grid-item-modal right" >
-                                                    Total a pagar : $ {dataCart.reduce((total, item) => Math.floor(((total + item.valor)*cantidad[item.id] || 1)*100)/100 || item.valor , 0)}
+                                                    Total a pagar : {formatCurrency(dataCart.reduce((total, item) => Math.floor(((total + item.precio)*cantidad[item.id] || 1)*100)/100 || item.precio , 0))}
                                                 </div>
                                                 {dataCart.length !== 0 &&(
                                                     <div>
                                                         <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' width="180" onClick={handleEmptyCart}>Vaciar carrito</button>
-                                                        {message && ( <div className='pay-message'>Función no disponible</div>)}
+                                                        {isMessagePay && ( <div className='pay-message'>{message.pay}</div>)}
                                                         <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' width="180" onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
                                                     </div>
                                                 )}
@@ -153,7 +174,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                     </div>
                     ) : (
                         <div className={`modal-shoppingcart status-shoppingcart empty-shoppingcart center ${isOpenCart ? 'data-shoppingcart' : 'closed-shoppingcart'}`}>
-                            <span className='close-shopping-cart' onClick={handleCart}>x</span>
+                            <span className='close-shopping-cart' title='Cerrar carro' onClick={handleCart}>x</span>
                             <h3>El carrito está vacío</h3>
                         </div>
                     )}
