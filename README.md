@@ -1,6 +1,6 @@
 # 🎸 GuitarStore - Tienda de Guitarras Online
 
-Tienda de guitarras modern y responsiva desarrollada con React. Ofrece una experiencia de compra completa con catálogo de productos, carrito funcional, validación de formularios y soporte para modo oscuro/claro.
+Tienda de guitarras moderna y responsiva desarrollada con React. Ofrece una experiencia de compra completa con catálogo de productos, carrito funcional, validación de formularios y soporte para modo oscuro/claro.
 
 ---
 
