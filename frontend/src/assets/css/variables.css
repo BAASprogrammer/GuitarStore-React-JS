@@ -97,6 +97,7 @@
   
   /* Status & Semantic Colors */
   --danger: rgba(189,1,1,1);
+  --danger-hover: rgb(160, 3, 3);
   --error-message: rgba(255, 68, 68, 1);
   --success-message: rgba(40, 167, 69, 1);
   

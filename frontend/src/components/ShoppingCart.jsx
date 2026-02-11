@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import useCurrency from '../hooks/useCurrency';
+import ConfirmModal from './ConfirmModal';
+import dataMessage from '../constants/messages';
 
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
@@ -7,14 +9,6 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [isOpenCart, setIsOpenCart] = useState(false)
     const [confirmDelete, setConfirmDelete] = useState(null)
     const formatCurrency = useCurrency()
-
-    const dataMessage = {
-        "pay": "Función no disponible",
-        "empty": "Carrito vacío",
-        "delete": "Producto eliminado",
-        "todelete": "¿Desea eliminar el producto del carrito?",
-        "max": "Cantidad máxima alcanzada"
-    }
     /* Logic to open and close the shopping cart modal */
     const handleCart = () => {
         setIsOpenCart(!isOpenCart);
@@ -60,8 +54,13 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const addProduct = (idproducto) => {
         setCantidad((prevcantidad)=>{
             const newcantidad = {...prevcantidad}
-            newcantidad[idproducto] >= 1 ? newcantidad[idproducto] += 1 : newcantidad[idproducto] = 1
-            return newcantidad
+            if (newcantidad[idproducto] >= 10) {
+                setMessage({ type: "max" });
+                return prevcantidad; // Don't increase
+            } else {
+                newcantidad[idproducto] = (newcantidad[idproducto] || 0) + 1;
+                return newcantidad;
+            }
         })
     }
     // Logic that executes when the input value changes
@@ -94,7 +93,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
             return newcant;
         });
         setConfirmDelete(null);
-        setMessage({});
+        setMessage({ type: "delete" }); // Show success message
     }
 
     const cancelDeleteProduct = () => {
@@ -112,20 +111,34 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     return(<div className="right shoppingcart">
                 {isOpenCart && <div className='overlay-shopping-cart' onClick={handleCart}></div>}
-                {message.type === "todelete" && (
-                    <>
-                        <div className='confirm-overlay' onClick={cancelDeleteProduct}></div>
-                        <div className="confirm-modal">
-                            <div className="modal-content">
-                                <p>{dataMessage.todelete}</p>
-                                <div className="button-container">
-                                    <button onClick={cancelDeleteProduct}>Cancelar</button>
-                                    <button onClick={confirmDeleteProduct}>Confirmar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                )}
+                <ConfirmModal
+                    key="todelete"
+                    isOpen={message.type === "todelete"}
+                    message={dataMessage.todelete.message}
+                    onConfirm={confirmDeleteProduct}
+                    onCancel={cancelDeleteProduct}
+                    showCloseButton={true}
+                    title={dataMessage.todelete.title}
+                    closeOnOverlay={false}
+                />
+                <ConfirmModal
+                    key="delete"
+                    isOpen={message.type === "delete"}
+                    message={dataMessage.delete.message}
+                    showButtons={false}
+                    onCancel={cancelDeleteProduct}
+                    title={dataMessage.delete.title}
+                />
+                <ConfirmModal
+                    key="max"
+                    isOpen={message.type === "max"}
+                    message={dataMessage.max.message}
+                    showButtons={false}
+                    onCancel={cancelDeleteProduct}
+                    showCloseButton={true}
+                    title={dataMessage.max.title}                    
+                    closeOnOverlay={false}   
+                />
                 <div className="container-shoppingcart center">
                     <button className='button-shoppingcart' title='Carrito de compras'>
                         <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>
@@ -157,7 +170,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                                 <div key={item.id} className="grid modal-row">
                                                     <div className="grid-item-modal"><img src={require(`../assets/images/products/${item.imagen}`)} alt="Guitarra"></img></div>
                                                     <div className="grid-item-modal"><label title={item.nombre}>{item.nombre}</label></div>
-                                                    <div className="grid-item-modal"><label>${formatCurrency(item.precio)}</label></div>
+                                                    <div className="grid-item-modal"><label>{formatCurrency(item.precio)}</label></div>
                                                     <div className="grid-item-modal">
                                                         <div className='flex justify-center align-center gap-1 quantity-container'>
                                                             <button className="add-del-cart" onClick={() => deleteProduct(item.id)} title='Disminuir cantidad'>-</button>
@@ -176,7 +189,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                                 {dataCart.length !== 0 &&(
                                                     <div>
                                                         <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' width="180" onClick={handleEmptyCart}>Vaciar carrito</button>
-                                                        {message.type === "pay" && ( <div className='pay-message'>{dataMessage[message.type]}  </div>)}
+                                                        {message.type === "pay" && ( <div className='pay-message'>{dataMessage[message.type].message}  </div>)}
                                                         <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' width="180" onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
                                                     </div>
                                                 )}

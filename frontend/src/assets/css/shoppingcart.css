@@ -206,7 +206,7 @@
 	color: var(--white);
 	background-color: var(--primary-color);
 	border: none;
-	border-radius: 4px;
+	border-radius: 15px;
 	margin: 0.15rem;
 	width: 24px;
 	height: 24px;
@@ -385,42 +385,121 @@ button:disabled:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 1000;
-	background: white;
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background: var(--bg-light);
+	padding: 30px;
+	border: 1px solid var(--border-primary-15);
+	border-radius: var(--br-lg);
+	box-shadow: var(--shadow-card-md);
+	max-width: 400px;
+	width: 90%;
+	animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -60%);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.confirm-modal .modal-content .modal-title {
+	font-size: 1.5rem;
+	font-weight: var(--weight-bold);
+	color: var(--text-dark);
+	margin-bottom: 15px;
+	text-align: center;
 }
 
 .confirm-modal .modal-content p {
-	margin: 0 0 20px 0;
-	font-size: 16px;
+	margin: 0 0 25px 0;
+	font-size: 1rem;
+	color: var(--text-dark-90);
+	line-height: 1.5;
+	text-align: center;
 }
 
 .confirm-modal .modal-content .button-container {
 	display: flex;
-	gap: 10px;
+	gap: 15px;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
-.confirm-modal button {
-	padding: 10px 20px;
+.confirm-modal .button-container button {
+	padding: 12px 24px;
 	border: none;
-	border-radius: 10px;
+	border-radius: var(--br-md);
 	cursor: pointer;
 	color: white;
 	font-weight: var(--weight-semi-bold);
-	transition: background-color 0.2s ease;
+	font-size: 1rem;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+	min-width: 100px;
 }
 
-.confirm-modal button:hover {
-	opacity: 0.9;
+.confirm-modal .button-container button:hover {
+	transform: translateY(-2px);
 }
 
-.confirm-modal button:first-child {
+.confirm-modal .button-container button:active {
+	transform: translateY(0);
+}
+
+.confirm-modal .button-container button:first-child {
 	background: var(--primary-color);
+	
 }
 
-.confirm-modal button:last-child {
+.confirm-modal .button-container button:first-child:hover {
+	background: var(--primary-hover);
+}
+
+.confirm-modal .button-container button:last-child {
 	background: var(--danger);
+}
+
+.confirm-modal .button-container button:last-child:hover {
+	background: var(--danger-hover);
+}
+
+.confirm-modal .modal-content .button-container button:disabled {
+	background: var(--border-light);
+	cursor: not-allowed;
+}
+.confirm-modal .modal-title {
+	font-size: 1.2rem;
+	font-weight: var(--weight-bold);
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.confirm-modal .close-modal {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-size: 1rem;
+	font-weight: bold;
+	color: var(--white);
+	cursor: pointer;
+	background: var(--primary-color);
+	border: none;
+	border-radius: var(--br-xl);
+	margin: 0.15rem;
+	width: 24px;
+	height: 24px;
+	min-width: 24px;
+	min-height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.2s ease;
+	z-index: 1001;
+}
+
+.confirm-modal .close-modal:hover {
+	background-color: var(--primary-hover);
 }
