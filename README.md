@@ -49,7 +49,6 @@ Tienda de guitarras modern y responsiva desarrollada con React. Ofrece una exper
 | **Frontend** | React 18.2, React Router DOM 6 |
 | **Estilos** | CSS3 (Variables CSS, Flexbox, Grid) |
 | **Iconos** | FontAwesome, React Icons |
-| **Carrusel** | Swiper 12 |
 | **Build** | Create React App, ES6+ |
 
 ---
@@ -292,4 +291,4 @@ Para consultas o sugerencias sobre el proyecto:
 ---
 
 **Última actualización:** Marzo 2024  
-**Versión:** 1.3.0
+**Versión:** 1.4.0
