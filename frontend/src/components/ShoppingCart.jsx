@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import useCurrency from '../hooks/useCurrency';
 import ConfirmModal from './ConfirmModal';
 import dataMessage from '../constants/messages';
 import { getModalConfigs } from '../constants/cartModals';
-
-const MAX_QUANTITY = 10;
+import { MAX_QUANTITY } from '../constants/config';
 
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
@@ -13,6 +12,9 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [confirmDelete, setConfirmDelete] = useState(null)
 
     const formatCurrency = useCurrency()
+
+    // Helper: get product name by id
+    const getProductName = (id) => dataCart.find(item => String(item.id) === String(id))?.nombre || 'Producto';
     /* Logic to open and close the shopping cart modal */
     const handleCart = () => {
         setIsOpenCart(!isOpenCart);
@@ -24,18 +26,18 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     
     /* Logic to update the quantity of products in the shopping cart when dataCart changes */
     useEffect(() => {
-        setCantidad((prevcantidad)=> {
+        setCantidad((prevCantidad)=> {
             // if the cart is empty, return an empty object
             if (dataCart.length === 0 ) {
                 return {}
             }
-            // use reduce to return the quantity from a copy of the previous quantity -> prevcantidad
+            // use reduce to return the quantity from a copy of the previous quantity -> prevCantidad
             const newcantidad = dataCart.reduce((acc, item) => {
                 if (acc[item.id] === undefined) {
                     acc[item.id] = 1
                 }
                 return acc
-            },{...prevcantidad})
+            },{...prevCantidad})
             return newcantidad
         })
     }, [dataCart]);
@@ -43,8 +45,8 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     // Decrease the quantity of a product added to the shopping cart
     const deleteProduct = (idproducto) => {
-        setCantidad((prevcantidad) =>{
-            const newcantidad = {...prevcantidad} // creates a copy of the original object
+        setCantidad((prevCantidad) =>{
+            const newcantidad = {...prevCantidad} // creates a copy of the original object
             if(newcantidad[idproducto] > 1) {
                 newcantidad[idproducto] -= 1 
             } else if(newcantidad[idproducto] === 1) {
@@ -56,12 +58,12 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     }
     // Increase the quantity of a product added to the shopping cart
     const addProduct = (idproducto) => {
-        setCantidad((prevcantidad)=>{
-            const newcantidad = {...prevcantidad}
+        setCantidad((prevCantidad)=>{
+            const newcantidad = {...prevCantidad}
             if (newcantidad[idproducto] >= MAX_QUANTITY) {
-                const productName = dataCart.find(item => String(item.id) === String(idproducto))?.nombre || 'Producto';
+                const productName = getProductName(idproducto);
                 setMessage({ type: "max", productName });
-                return prevcantidad; // Don't increase
+                return prevCantidad; // Don't increase
             } else {
                 newcantidad[idproducto] = (newcantidad[idproducto] || 0) + 1;
                 return newcantidad;
@@ -73,7 +75,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
         let eventvalue = /^0+$/.test(event.target.value) || event.target.value === "" ? 0 : parseInt(event.target.value)
         const newcantidad = {...cantidad}
         if (eventvalue > MAX_QUANTITY) {
-            const productName = dataCart.find(item => String(item.id) === String(id))?.nombre || 'Producto';
+            const productName = getProductName(id);
             setMessage({ type: "max", productName });
             newcantidad[id] = MAX_QUANTITY;
         } else if (eventvalue === 0) {
@@ -98,8 +100,8 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     const confirmDeleteProduct = () => {
         deleteCart(confirmDelete);
-        setCantidad((prev) => {
-            const newcant = {...prev};
+        setCantidad((prevCantidad) => {
+            const newcant = {...prevCantidad};
             delete newcant[confirmDelete];
             return newcant;
         });
@@ -114,7 +116,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     }
 
     // Calculate total items in cart
-    const totalCount = dataCart.reduce((acc, item) => acc + (Number(cantidad[item.id]) || 1), 0);
+    const totalCount = useMemo(() => dataCart.reduce((acc, item) => acc + (Number(cantidad[item.id]) || 1), 0), [dataCart, cantidad]);
 
     // Helper: formats the badge (shows "999+" if > 999)
     const formatBadgeCount = (count) => {
@@ -129,13 +131,16 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     return(<div className="right shoppingcart">
                 {isOpenCart && <div className='overlay-shopping-cart' onClick={message.type ? () => {} : handleCart}></div>}
-                {modalConfigs.map(config => (
-                    <ConfirmModal
-                        key={config.key}
-                        isOpen={message.type === config.type}
-                        {...config}
-                    />
-                ))}
+                {modalConfigs.map(config => {
+                    const { key, ...configProps } = config;
+                    return (
+                        <ConfirmModal
+                            key={key}
+                            isOpen={message.type === config.type}
+                            {...configProps}
+                        />
+                    );
+                })}
                 <div className="container-shoppingcart center">
                     <button className='button-shoppingcart' title='Carrito de compras'>
                         <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>
