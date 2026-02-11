@@ -203,17 +203,17 @@ frontend/
 
 ## 📊 Características Técnicas Destacadas
 
-✅ **React Hooks**: useState, useEffect, useContext, useMemo, useCallback
-✅ **Custom Hooks**: useCurrency para formateo de moneda CLP
-✅ **Context API**: Gestión de temas (dark/light)
-✅ **Componentes Reutilizables**: ConfirmModal para confirmaciones, con configuraciones separadas
-✅ **React Router**: Navegación SPA sin recargas
-✅ **Validación de Formularios**: Regex, validación condicional
-✅ **CSS Variables**: Reutilización de valores de diseño
-✅ **Clases Utilitarias**: Enfoque utility-first para layouts
-✅ **Responsive Design**: Mobile-first y adaptable
-✅ **Accesibilidad WCAG**: aria-labels, semantic HTML
-✅ **Gestión Centralizada**: Mensajes y constantes organizados
+- ✅ **React Hooks**: useState, useEffect, useContext, useMemo, useCallback
+- ✅ **Custom Hooks**: useCurrency para formateo de moneda CLP
+- ✅ **Context API**: Gestión de temas (dark/light)
+- ✅ **Componentes Reutilizables**: ConfirmModal para confirmaciones, con configuraciones separadas
+- ✅ **React Router**: Navegación SPA sin recargas
+- ✅ **Validación de Formularios**: Regex, validación condicional
+- ✅ **CSS Variables**: Reutilización de valores de diseño
+- ✅ **Clases Utilitarias**: Enfoque utility-first para layouts
+- ✅ **Responsive Design**: Mobile-first y adaptable
+- ✅ **Accesibilidad WCAG**: aria-labels, semantic HTML
+- ✅ **Gestión Centralizada**: Mensajes y constantes organizados
 
 ---
 
@@ -291,4 +291,4 @@ Para consultas o sugerencias sobre el proyecto:
 ---
 
 **Última actualización:** Febrero 2026  
-**Versión:** 1.7.0
+**Versión:** 1.8.0
