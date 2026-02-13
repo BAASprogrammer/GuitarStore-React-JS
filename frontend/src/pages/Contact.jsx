@@ -1,6 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGuitar, faHeadphones, faMusic } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/contact.css";
 import dataMessage from '../constants/messages';
 

@@ -1,7 +1,9 @@
 :root {
   /* Fonts */
-  --font-arimo: "Arimo", sans-serif;
+  --font-primary: "Outfit", sans-serif;
   --font-display: "Oswald", sans-serif;
+  --font-arimo: var(--font-primary);
+  /* Fallback for existing references */
   /* Typography Scale */
   --fs-hero: clamp(2.5rem, 8vw, 4.5rem);
   --fs-h1: clamp(2rem, 6vw, 3.5rem);
@@ -28,8 +30,8 @@
   --size-square-lg: 36px;
   --size-square-xl: 40px;
   --percent-half: 48%;
-  --font-lato: "Lato", sans-serif;
-  --font-montserrat: "Montserrat", sans-serif;
+  --font-lato: var(--font-primary);
+  --font-montserrat: var(--font-primary);
 
   /* Font weights */
   --weight-thin: 100;

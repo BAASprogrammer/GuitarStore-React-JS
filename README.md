@@ -27,7 +27,7 @@ Tienda de guitarras moderna y responsiva desarrollada con React. Ofrece una expe
 - Validación robusta de campos
 - Mensajes de error dinámicos
 - Estilos glassmorphism moderno
-- Efecto blur en fondo
+- Fondos animados nítidos y vibrantes
 
 📱 **Diseño Responsivo**
 - Totalmente responsive desde móvil hasta desktop
@@ -97,7 +97,6 @@ frontend/
 ├── src/
 │   ├── assets/
 │   │   ├── css/           # Estilos globales y por página
-│   │   ├── fonts/         # Fuentes personalizadas (Montserrat, Lato, Arimo)
 │   │   └── images/        # Imágenes (header, home, products)
 │   ├── contexts/
 │   │   └── ColorProvider.jsx    # Context para tema oscuro/claro
@@ -147,7 +146,8 @@ frontend/
 - Gradientes suaves en secciones principales
 - Efecto glassmorphism en formularios
 - Animaciones de hover en botones e iconos
-- Elementos decorativos animados (puntos, iconos flotantes)
+- **Atmospheric Swarm**: Elementos decorativos (notas, guitarras) con movimiento autónomo y fluido
+- Desplazamiento suave (**Smooth Scroll**) con márgenes optimizados
 
 ---
 
@@ -214,6 +214,7 @@ frontend/
 - ✅ **Responsive Design**: Mobile-first y adaptable
 - ✅ **Accesibilidad WCAG**: aria-labels, semantic HTML
 - ✅ **Gestión Centralizada**: Mensajes y constantes organizados
+- ✅ **Premium Typography**: Pairing de Outfit (cuerpo) y Oswald (títulos)
 
 ---
 
@@ -291,4 +292,4 @@ Para consultas o sugerencias sobre el proyecto:
 ---
 
 **Última actualización:** Febrero 2026  
-**Versión:** 1.9.0
+**Versión:** 2.0.0

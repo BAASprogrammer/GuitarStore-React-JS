@@ -41,7 +41,7 @@ export default function Home({ dato, cart, addCart }) {
               onClick={() => {
                 const productsSection = document.getElementById('products');
                 if (productsSection) {
-                  productsSection.scrollIntoView({ behavior: 'smooth' });
+                  productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}>
               Ver Productos <FontAwesomeIcon icon={faShoppingCart} />
@@ -50,7 +50,7 @@ export default function Home({ dato, cart, addCart }) {
               onClick={() => {
                 const whyChooseUsSection = document.querySelector('.why-choose-us');
                 if (whyChooseUsSection) {
-                  whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
+                  whyChooseUsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}>
               Conoce más <FontAwesomeIcon icon={faInfoCircle} />

@@ -193,6 +193,7 @@
   overflow: hidden;
   /* Evita desbordamiento */
   width: 100%;
+  scroll-margin-top: 100px;
 }
 
 .why-choose-us-title {

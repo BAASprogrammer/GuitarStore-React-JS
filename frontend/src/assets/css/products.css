@@ -1,4 +1,8 @@
 /* Product and cart item styles */
+.products-section {
+	scroll-margin-top: 100px;
+}
+
 .collection-txt {
 	color: var(--primary-color);
 }
