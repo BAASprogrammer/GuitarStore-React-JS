@@ -68,7 +68,7 @@ export default function Home({ dato, cart, addCart }) {
         <div>
           <div className="why-choose-us-title center font-weight-600">¿Por qué <span className="why-choose-us-title-end">elegirnos</span>?</div>
         </div>
-        <div className="why-choose-us-grid flex flex-wrap justify-center align-center gap-2">
+        <div className="why-choose-us-grid flex flex-wrap justify-center gap-2">
           <div className="why-choose-us-item center">
             <div className="wcu-icon-container">
               <FontAwesomeIcon icon={faCertificate} size="2x" className="wcu-icon" />
