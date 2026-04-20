@@ -2,10 +2,10 @@ const { WebpayPlus, Options, IntegrationApiKeys, IntegrationCommerceCodes, Envir
 
 /**
  * Vercel Serverless Function: POST /api/webpay/crear
- * Crea una transacción en Webpay Plus (ambiente de integración/pruebas)
+ * Creates a Webpay Plus transaction (integration/testing environment)
  */
 module.exports = async function handler(req, res) {
-    // Cabeceras CORS para desarrollo local
+    // CORS headers for local development
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');

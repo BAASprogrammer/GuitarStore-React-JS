@@ -2,7 +2,7 @@ const { WebpayPlus, Options, IntegrationApiKeys, IntegrationCommerceCodes, Envir
 
 /**
  * Vercel Serverless Function: POST /api/webpay/confirmar
- * Confirma (commit) la transacción después de que Webpay redirige al comercio.
+ * Commits the transaction after Webpay redirects the user back to the store.
  */
 module.exports = async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');

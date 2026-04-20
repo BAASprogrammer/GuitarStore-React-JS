@@ -55,10 +55,10 @@ export default function Checkout({ emptyCart }) {
         setApiError('');
 
         try {
-            // Determinar la URL de retorno (donde Webpay redirige tras el pago)
+            // Determine the return URL (where Webpay redirects after payment)
             const returnUrl = `${window.location.origin}/webpay/resultado`;
 
-            // Llamar a nuestra función serverless
+            // Call our serverless function
             const res = await fetch('/api/webpay/crear', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -72,12 +72,12 @@ export default function Checkout({ emptyCart }) {
 
             if (!res.ok) {
                 const err = await res.json();
-                throw new Error(err.error || 'Error en el servidor');
+                throw new Error(err.error || 'Server error');
             }
 
             const { token, url } = await res.json();
 
-            // Redirigir a Webpay mediante formulario POST (requerido por Transbank)
+            // Redirect to Webpay using a POST form (required by Transbank)
             const form = document.createElement('form');
             form.method = 'POST';
             form.action = url;
@@ -90,7 +90,7 @@ export default function Checkout({ emptyCart }) {
             form.submit();
 
         } catch (err) {
-            console.error('Error al iniciar pago:', err);
+            console.error('Error starting payment:', err);
             setApiError('No se pudo conectar con el servicio de pago. Intenta nuevamente.');
             setIsSubmitting(false);
         }
@@ -181,7 +181,7 @@ export default function Checkout({ emptyCart }) {
                             {errors.ciudad && <span className="form-error">{errors.ciudad}</span>}
                         </div>
 
-                        {/* Error de API */}
+                        {/* API Error */}
                         {apiError && (
                             <div className="checkout-api-error">⚠ {apiError}</div>
                         )}
@@ -247,7 +247,7 @@ export default function Checkout({ emptyCart }) {
                         <span>{formatCurrency(totalPrice)}</span>
                     </div>
 
-                    {/* Sello Webpay */}
+                    {/* Webpay Badge */}
                     <div className="webpay-badge">
                         <span>🔒 Pago seguro con</span>
                         <strong>Webpay Plus</strong>

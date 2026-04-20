@@ -3,9 +3,9 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import useCurrency from '../hooks/useCurrency';
 
 /**
- * Página de resultado del pago Webpay Plus.
- * Webpay redirige aquí (GET con ?token_ws=...) después del pago.
- * Esta página llama a /api/webpay/confirmar para obtener el resultado.
+ * Webpay Plus payment result page.
+ * Webpay redirects here (GET with ?token_ws=...) after payment.
+ * This page calls /api/webpay/confirmar to get the result.
  */
 export default function WebpayResultado({ emptyCart }) {
     const [searchParams] = useSearchParams();
@@ -16,21 +16,21 @@ export default function WebpayResultado({ emptyCart }) {
 
     useEffect(() => {
         const token = searchParams.get('token_ws');
-        const tbkToken = searchParams.get('TBK_TOKEN'); // pago anulado
+        const tbkToken = searchParams.get('TBK_TOKEN'); // aborted payment
 
-        // Si viene TBK_TOKEN pero no token_ws → el usuario anuló el pago
+        // If TBK_TOKEN is present but not token_ws → user aborted the payment
         if (!token && tbkToken) {
             setEstado('rechazado');
             return;
         }
 
-        // Si no hay ningún token → acceso directo a la URL sin pago
+        // If there's no token → direct access to URL without payment
         if (!token) {
             navigate('/');
             return;
         }
 
-        // Confirmar la transacción con nuestro backend serverless
+        // Confirm the transaction with our serverless backend
         const confirmar = async () => {
             try {
                 const res = await fetch('/api/webpay/confirmar', {
@@ -43,7 +43,7 @@ export default function WebpayResultado({ emptyCart }) {
                 if (data.aprobada) {
                     setDetalle(data);
                     setEstado('aprobado');
-                    emptyCart(); // Vaciar el carrito tras pago exitoso
+                    emptyCart(); // Empty the cart after successful payment
                 } else {
                     setEstado('rechazado');
                 }
