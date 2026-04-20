@@ -14,7 +14,8 @@ import "./assets/css/products.css";
 import "./assets/css/shoppingcart.css";
 import "./assets/css/home.css";
 import "./assets/css/footer.css";
-import "./assets/css/mobile.css"; 
+import "./assets/css/mobile.css";
+import "./assets/css/checkout.css";
 
 import loadingGif from './assets/images/loading.gif';
 
@@ -43,6 +44,7 @@ function AppContent({ dato, cart, addCart, deleteCart, emptyCart, error, cargand
           dato={dato}
           cart={cart}
           addCart={addCart}
+          emptyCart={emptyCart}
         />
         <Footer />
         </div>

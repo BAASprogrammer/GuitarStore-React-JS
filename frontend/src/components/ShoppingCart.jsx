@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useCurrency from '../hooks/useCurrency';
 import ConfirmModal from './ConfirmModal';
 import CartItem from './cart/CartItem';
@@ -16,6 +17,7 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
     const [isOpenCart, setIsOpenCart] = useState(false)
     const [confirmDelete, setConfirmDelete] = useState(null)
 
+    const navigate = useNavigate();
     const formatCurrency = useCurrency()
 
     // Helper: get product name by id
@@ -28,6 +30,16 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
     const handleEmptyCart = useCallback(() => {
         setMessage({ type: "emptyCart" });
     }, []);
+
+    /* Logic to initiate the payment process — navigate to checkout with cart + quantities */
+    const handlePay = useCallback(() => {
+        const cartWithQty = dataCart.map(item => ({
+            ...item,
+            cantidad: cantidad[item.id] || 1
+        }));
+        setIsOpenCart(false);
+        navigate('/checkout', { state: { cart: cartWithQty } });
+    }, [dataCart, cantidad, navigate]);
 
     /* Logic to update the quantity of products in the shopping cart when dataCart changes */
     useEffect(() => {
@@ -100,7 +112,7 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
     }, [message.type]);
 
     const handleMouseOutPayCart = useCallback(() => {
-        setMessage({}); // Clears the message
+        setMessage((prev) => prev.type === "pay" ? {} : prev); // Clears the message only if it's the pay tooltip
     }, []);
 
     const confirmDeleteProduct = useCallback(() => {
@@ -119,6 +131,7 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
         setConfirmDelete(null);
         setMessage({});
     }, []);
+
 
     // Calculate total items in cart
     const totalCount = useMemo(() => dataCart.reduce((acc, item) => acc + (Number(cantidad[item.id]) || 1), 0), [dataCart, cantidad]);
@@ -192,6 +205,7 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
                                             dataMessage={dataMessage}
                                             handleMouseOverPayCart={handleMouseOverPayCart}
                                             handleMouseOutPayCart={handleMouseOutPayCart}
+                                            handlePay={handlePay}
                                         />
                                     </div>
                                 </div>

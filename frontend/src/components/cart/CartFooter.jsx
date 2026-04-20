@@ -5,7 +5,8 @@ export default function CartFooter({
     message,
     dataMessage,
     handleMouseOverPayCart,
-    handleMouseOutPayCart
+    handleMouseOutPayCart,
+    handlePay
 }) {
     return (
         <div className="grid modal-row footer">
@@ -30,6 +31,7 @@ export default function CartFooter({
                         onMouseOver={handleMouseOverPayCart}
                         onMouseOut={handleMouseOutPayCart}
                         disabled={totalPrice === 0}
+                        onClick={handlePay}
                     >
                         Pagar
                     </button>

@@ -1,5 +1,7 @@
 const dataMessage = {
-    "pay": { message: "Función no disponible", title: "Información" },
+    "payConfirm": { message: "¿Desea proceder con el pago de su pedido?", title: "Confirmar Pedido" },
+    "pay": { message: "Click para ir al checkout", title: "Información" },
+    "paid": { message: "¡Pago realizado con éxito! Gracias por su compra.", title: "Venta Exitosa" },
     "empty": { message: "Carrito vacío", title: "Carrito" },
     "delete": { message: "Producto Eliminado", title: "Éxito" },
     "todelete": { message: "¿Desea eliminar el producto del carrito?", title: "Confirmar Eliminación" },
